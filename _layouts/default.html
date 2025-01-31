@@ -17,10 +17,12 @@
   <!-- Usamos 'relative_url' para evitar problemas de rutas en GitHub Pages -->
   <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.15.3/katex.min.css">
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.15.3/katex.min.js"></script>
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.15.3/contrib/auto-render.min.js"
-  onload="renderMathInElement(document.body);"></script>
+<!-- Carga MathJax para mostrar ecuaciones en formato LaTeX -->
+<script type="text/javascript" async
+  src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" async
+  id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
   
 </head>
 <body>
