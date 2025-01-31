@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Estadísticos de variabilidad y forma</title>
   <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link 
+  <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
     rel="stylesheet"
   />
@@ -38,7 +38,7 @@
         <summary><strong>Varianza</strong></summary>
         <p>
           Mide el promedio de las desviaciones cuadráticas respecto a la media. 
-          <br>Se suele distinguir entre varianza poblacional (σ²) y muestral (s²).
+          Se suele distinguir entre varianza poblacional (σ²) y muestral (s²).
         </p>
         <pre><code>Fórmula (muestra):
 s² = (1 / (n - 1)) × Σ(xᵢ - x̄)²
@@ -65,8 +65,8 @@ s = √s²
         <summary><strong>Asimetría (Skewness)</strong></summary>
         <p>
           Mide el grado de simetría de la distribución. 
-          <br>Asimetría positiva = Los datos se concentran en la zona baja de la distribución, cola más larga a la derecha. 
-          <br>Asimetría negativa = Los datos se concentran en la zona alta de la distribución, cola más larga a la izquierda.
+          <br>Asimetría positiva = cola a la derecha (valores altos).
+          <br>Asimetría negativa = cola a la izquierda (valores bajos).
         </p>
         <pre><code>Fórmula (aprox):
 Skewness = (1 / n) × Σ[(xᵢ - x̄) / s]³
@@ -76,8 +76,8 @@ Skewness = (1 / n) × Σ[(xᵢ - x̄) / s]³
       <details>
         <summary><strong>Curtosis (Kurtosis)</strong></summary>
         <p>
-          Indica el grado de “apuntamiento” (Mesocúrtica) o “achatamiento” (Platicútica) de la distribución 
-          respecto a la normal.
+          Indica el grado de “apuntamiento” (Leptocúrtica) o “achatamiento” (Platicúrtica)
+          de la distribución respecto a la normal.
         </p>
         <pre><code>Fórmula (aprox):
 Kurtosis = (1 / n) × Σ[(xᵢ - x̄) / s]⁴
