@@ -27,8 +27,8 @@ permalink: /
     <li class="card">
       <h3>Univariado</h3>
       <p>
-        Se centra en evaluar una sola variable a la vez. Su objetivo es describir la 
-        distribución, tendencia central y dispersión.
+        Evalúa una sola variable a la vez describiendo su 
+        distribución, tendencia central y dispersión. También hay análisis inferenciales.
       </p>
       <a href="{{ '/univariado/' | relative_url }}" class="btn-secundario">Ver más</a>
     </li>
