@@ -1,0 +1,20 @@
+<!-- _includes/header.html -->
+<header>
+  <div class="logo">
+    <!-- Puedes cambiar el texto del <h1> si deseas -->
+    <h1>Estadística 2025</h1>
+  </div>
+  <nav>
+    <ul>
+      <!--
+        Para enlaces en Jekyll, a menudo utilizamos {{ '/ruta/' | relative_url }}
+        para que resuelvan correctamente incluso si el sitio se sirve en una subcarpeta
+      -->
+      <li><a href="{{ '/' | relative_url }}">Inicio</a></li>
+      <li><a href="{{ '/univariado/' | relative_url }}">Univariado</a></li>
+      <li><a href="{{ '/bivariado/' | relative_url }}">Bivariado</a></li>
+      <li><a href="{{ '/multivariado/' | relative_url }}">Multivariado</a></li>
+    </ul>
+  </nav>
+  <button class="btn-primario" id="toggleDarkMode">Modo Oscuro</button>
+</header>
