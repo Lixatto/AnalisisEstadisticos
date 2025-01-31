@@ -302,6 +302,3 @@ permalink: /bivariado/
     En un estudio sobre el impacto de un programa de intervención educativa, se evaluó el rendimiento académico de los estudiantes antes y después de la intervención utilizando la prueba t para muestras relacionadas. Los resultados indicaron un valor de \( t \) significativo (\( p < 0.01 \)) y un tamaño del efecto de \( d = 0.65 \), sugiriendo un efecto mediano. Además, para comparar el rendimiento entre tres grupos (control, intervención A e intervención B), se aplicó un ANOVA One-Way, que arrojó un \( \eta^2 = 0.12 \), lo que implica que el 12% de la varianza en el rendimiento académico se explica por el tipo de intervención.
   </p>
 </section>
-
-  </p>
-</section>
