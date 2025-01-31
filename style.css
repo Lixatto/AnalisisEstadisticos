@@ -1,33 +1,31 @@
+/* style.css (mismo contenido que tenías) */
+
 /* -----------------------
    VARIABLES DE COLOR
 ------------------------- */
 :root {
-  --color-primario: #007acc;        /* Azul principal (modo claro) */
-  --color-primario-oscuro: #005f99; /* Azul oscuro (modo claro) */
-  --color-secundario: #f4f4f4;      /* Gris claro de fondo (modo claro) */
-  --color-texto: #333;              /* Texto principal (modo claro) */
-  --color-blanco: #fff;             /* Blanco (modo claro) */
+  --color-primario: #007acc;
+  --color-primario-oscuro: #005f99;
+  --color-secundario: #f4f4f4;
+  --color-texto: #333;
+  --color-blanco: #fff;
   --fuente-base: 'Poppins', sans-serif;
 }
 
 /* MODO OSCURO (clase) */
 .modo-oscuro {
-  /* Cambiamos la paleta al modo morado + fondo oscuro */
-  --color-primario: #9c27b0;         /* Morado principal */
-  --color-primario-oscuro: #7b1fa2;  /* Morado más oscuro */
-  --color-secundario: #1a1a1a;       /* Fondo muy oscuro */
-  --color-texto: #f4f4f4;            /* Texto claro */
-  --color-blanco: #333;             /* Un gris para “blanco” en modo oscuro */
+  --color-primario: #9c27b0;
+  --color-primario-oscuro: #7b1fa2;
+  --color-secundario: #1a1a1a;
+  --color-texto: #f4f4f4;
+  --color-blanco: #333;
 }
 
-/* -----------------------
-   RESET BÁSICO Y TRANSICIÓN
-------------------------- */
+/* Reset y transiciones */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* Transición suave para cambios de color/fondo */
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
@@ -42,9 +40,7 @@ body {
   line-height: 1.6;
 }
 
-/* -----------------------
-   ENCABEZADO (HEADER)
-------------------------- */
+/* Header */
 header {
   background-color: var(--color-primario);
   display: flex;
@@ -59,9 +55,7 @@ header {
   font-weight: 600;
 }
 
-/* -----------------------
-   NAVEGACIÓN (NAV)
-------------------------- */
+/* Navegación */
 nav ul {
   list-style: none;
   display: flex;
@@ -80,11 +74,8 @@ nav ul li a.active {
   background-color: var(--color-primario-oscuro);
 }
 
-/* -----------------------
-   BOTÓN PRIMARIO
-------------------------- */
+/* Botón primario */
 .btn-primario {
-  text-decoration: none;
   background-color: var(--color-blanco);
   color: var(--color-primario-oscuro);
   padding: 0.75rem 1.5rem;
@@ -92,15 +83,14 @@ nav ul li a.active {
   font-weight: 600;
   border: none;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .btn-primario:hover {
   background-color: var(--color-secundario);
 }
 
-/* -----------------------
-   SECCIÓN HERO
-------------------------- */
+/* Sección Hero */
 .hero {
   text-align: center;
   padding: 3rem 1rem;
@@ -124,9 +114,7 @@ nav ul li a.active {
   font-size: 1.1rem;
 }
 
-/* -----------------------
-   CONTENIDO (MAIN SECTIONS)
-------------------------- */
+/* Main */
 main {
   margin: 1rem;
 }
@@ -151,23 +139,14 @@ main {
   font-size: 1rem;
 }
 
-/* -----------------------
-   CARDS (LISTA DE SECCIONES)
-------------------------- */
+/* Cards */
 .cards {
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
   justify-content: center;
-  margin-top: 2rem;
-  list-style: none;   /* Quita viñetas de la lista */
-  margin: 2rem 0;     /* Ajusta si quieres más espacio */
-  padding: 0;         /* Elimina indentación por defecto */
-}
-
-.cards > li {
-  list-style: none; /* Asegura que no aparezca viñeta a nivel <li> */
-  margin: 0;
+  list-style: none;
+  margin: 2rem 0;
   padding: 0;
 }
 
@@ -198,9 +177,7 @@ main {
   line-height: 1.4;
 }
 
-/* -----------------------
-   BOTONES SECUNDARIOS
-------------------------- */
+/* Botón secundario */
 .btn-secundario {
   display: inline-block;
   margin-top: 1rem;
@@ -216,9 +193,7 @@ main {
   background-color: var(--color-primario-oscuro);
 }
 
-/* -----------------------
-   DETALLES <DETAILS>
-------------------------- */
+/* details */
 details {
   margin-top: 1rem;
   background-color: var(--color-secundario);
@@ -240,9 +215,7 @@ details ul {
   color: var(--color-texto);
 }
 
-/* -----------------------
-   PRE, CODE
-------------------------- */
+/* pre, code */
 pre, code {
   background-color: #f0f0f0;
   color: #444;
@@ -250,21 +223,21 @@ pre, code {
   font-size: 0.9rem;
 }
 
-/* -----------------------
-   LISTAS
-------------------------- */
+/* Listas */
 ul {
-  margin: 1rem;
   list-style: inside disc;
+  margin: 1rem;
 }
 
-/* -----------------------
-   PIE DE PÁGINA (FOOTER)
-------------------------- */
+/* Footer */
 footer {
   text-align: center;
   font-size: 0.9rem;
   background-color: var(--color-primario);
+  color: var(--color-blanco);
+  padding: 1rem;
+}
+
   color: var(--color-blanco);
   padding: 1rem;
 }
