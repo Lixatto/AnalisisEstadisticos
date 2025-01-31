@@ -1,4 +1,3 @@
-<!-- index.md en la raíz -->
 ---
 layout: default
 title: "Mi Sitio en GitHub Pages - Inicio"
