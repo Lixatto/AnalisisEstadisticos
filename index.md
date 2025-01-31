@@ -3,7 +3,8 @@
 layout: default
 title: "Mi Sitio en GitHub Pages - Inicio"
 permalink: /
---
+---
+
 
 <!-- Sección Hero -->
 <section class="hero">
