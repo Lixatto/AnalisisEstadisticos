@@ -4,16 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Análisis Univariado</title>
-  <!-- Fuentes y estilos (ajusta según tu proyecto) -->
+  <!-- Fuentes y estilo -->
   <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link
+  <link 
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
     rel="stylesheet"
   />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- ENCABEZADO -->
   <header>
     <div class="logo">
       <h1>Estadística 2025</h1>
@@ -28,228 +27,28 @@
     </nav>
   </header>
 
-  <!-- CONTENIDO PRINCIPAL -->
   <main>
-    <!-- Presentación general del análisis univariado -->
     <section class="contenido">
       <h2>Análisis Univariado</h2>
       <p>
-        El análisis univariado se concentra en examinar una sola variable a la vez,
-        describiendo y sintetizando sus propiedades fundamentales. Entre los
-        principales indicadores se encuentran aquellos que miden el centro de la
-        distribución, la variabilidad y la forma. 
+        El Análisis Univariado se enfoca en describir y sintetizar las propiedades 
+        de <strong>una sola variable</strong> a la vez. A continuación, separamos 
+        los principales temas en subpáginas para facilitar la navegación.
       </p>
-    </section>
-
-    <!-- Estadísticos de centro -->
-    <section class="contenido">
-      <h3>Estadísticos de centro</h3>
+      <ul>
+        <li><a href="univariado_centro.html">Estadísticos de centro</a></li>
+        <li><a href="univariado_dispersion_forma.html">Estadísticos de variabilidad y forma</a></li>
+        <li><a href="univariado_ejemplos.html">Ejemplos aplicados</a></li>
+        <li><a href="univariado_bondad.html">Pruebas de bondad de ajuste</a></li>
+      </ul>
       <p>
-        Estos permiten ubicar el “promedio” o la tendencia central de la distribución
-        de datos.
+        En cada sección se incluyen definiciones, fórmulas y sugerencias para
+        interpretar los resultados, especialmente en el contexto de la Psicología
+        Social.
       </p>
-
-      <details>
-        <summary><strong>Media</strong></summary>
-        <p>
-          La media (o promedio) es la suma de todos los valores dividida entre el
-          número total de observaciones. Representa el punto de equilibrio de la
-          distribución.
-        </p>
-        <pre><code>
-Fórmula:
-
-   x̄ = (Σxᵢ) / n
-
-Donde:
-- xᵢ = valor i-ésimo
-- n  = número total de observaciones
-        </code></pre>
-      </details>
-
-      <details>
-        <summary><strong>Mediana</strong></summary>
-        <p>
-          La mediana es el valor que divide la distribución en dos partes iguales.
-          Si el número de datos es impar, es el valor central; si es par, se calcula
-          como el promedio de los dos valores centrales.
-        </p>
-      </details>
-
-      <details>
-        <summary><strong>Moda</strong></summary>
-        <p>
-          La moda es el valor que aparece con mayor frecuencia en el conjunto de datos.
-          En distribuciones con varios valores muy frecuentes, puede haber más de una
-          moda.
-        </p>
-      </details>
-
-      <details>
-        <summary><strong>Otros</strong></summary>
-        <p>
-          En ocasiones se emplean estadísticas de posición como la <em>media recortada</em>
-          (que excluye valores extremos) o la <em>media ponderada</em> (que da mayor
-          importancia a ciertas observaciones), dependiendo de la naturaleza y objetivos
-          del análisis.
-        </p>
-      </details>
-    </section>
-
-    <!-- Estadísticos de variabilidad -->
-    <section class="contenido">
-      <h3>Estadísticos de variabilidad</h3>
-      <p>
-        Estos indican cuánto se dispersan los datos alrededor de la tendencia central.
-      </p>
-
-      <details>
-        <summary><strong>Varianza</strong></summary>
-        <p>
-          La varianza mide el promedio de las desviaciones cuadráticas respecto a la
-          media. Es particularmente útil para comparar dispersión entre diferentes
-          conjuntos de datos.
-        </p>
-        <pre><code>
-Fórmula (muestra):
-
-   s² = (1 / (n - 1)) × Σ(xᵢ - x̄)²
-
-Donde:
-- x̄ = media de la muestra
-- xᵢ = valor i-ésimo
-- n  = número total de observaciones
-        </code></pre>
-      </details>
-
-      <details>
-        <summary><strong>Desviación estándar</strong></summary>
-        <p>
-          La desviación estándar es la raíz cuadrada de la varianza y expresa en las
-          mismas unidades del fenómeno medido la dispersión de los datos.
-        </p>
-        <pre><code>
-Fórmula (muestra):
-
-   s = √s²
-
-Donde:
-- s² = varianza de la muestra
-        </code></pre>
-      </details>
-    </section>
-
-    <!-- Estadísticos de forma -->
-    <section class="contenido">
-      <h3>Estadísticos de forma</h3>
-      <p>
-        Describen la simetría y el “apuntamiento” (concentración de valores) de la
-        distribución.
-      </p>
-
-      <details>
-        <summary><strong>Asimetría (Skewness)</strong></summary>
-        <p>
-          Mide el grado de simetría de la distribución. Un valor positivo indica cola larga a
-          la derecha; en tanto un valor negativo da como resultado un cola larga a la izquierda. Existen versiones estandarizadas de este coeficiente.
-        </p>
-        <pre><code>
-Fórmula (una de las definiciones):
-
-   Skewness = (1 / n) × Σ[(xᵢ - x̄) / s]³
-        </code></pre>
-      </details>
-
-      <details>
-        <summary><strong>Curtosis (Kurtosis)</strong></summary>
-        <p>
-          Indica el grado de “apuntamiento” o “achatamiento” de la distribución
-          respecto a la campana normal. Valores altos sugieren colas pesadas y
-          concentración de valores en el centro. Existen versiones estandarizadas de este coeficiente.
-        </p>
-        <pre><code>
-Fórmula (una de las definiciones):
-
-   Kurtosis = (1 / n) × Σ[(xᵢ - x̄) / s]⁴
-        </code></pre>
-      </details>
-    </section>
-
-    <!-- Ejemplos aplicados en Psicología Social -->
-    <section class="contenido">
-      <h3>Ejemplos aplicados en Psicología Social</h3>
-      
-      <details>
-        <summary><strong>Ejemplo 1: Satisfacción con el profesor en clase</strong></summary>
-        <p>
-          Imagina que 30 estudiantes valoran la satisfacción con su profesor en una
-          escala de 1 (muy baja) a 5 (muy alta). Tras recopilar las 30 respuestas,
-          calculamos:
-        </p>
-        <ul>
-          <li>Media = 4.2</li>
-          <li>Mediana = 4</li>
-          <li>Moda = 5</li>
-          <li>Desviación estándar = 0.6</li>
-        </ul>
-        <p>
-          Observamos que la mayoría de los alumnos puntúa alto (moda=5), con una
-          variabilidad moderada (s=0.6), lo que sugiere un alto nivel de satisfacción.
-        </p>
-      </details>
-
-      <details>
-        <summary><strong>Ejemplo 2: Actitudes hacia el trabajo en grupo</strong></summary>
-        <p>
-          En una empresa, 50 empleados completan un cuestionario sobre su actitud hacia
-          el trabajo en equipo (escala 1-7). Los resultados muestran:
-        </p>
-        <ul>
-          <li>Media = 5.1</li>
-          <li>Varianza = 1.30</li>
-          <li>Sesgo = -0.45</li>
-        </ul>
-        <p>
-          La media indica una actitud favorable (por encima del punto medio de 4),
-          mientras que un sesgo negativo moderado (-0.45) sugiere que hay una cola
-          ligeramente más extendida hacia la derecha (algunos pocos casos con actitudes
-          muy positivas).
-        </p>
-      </details>
-
-      <details>
-        <summary><strong>Ejemplo 3: Niveles de ansiedad en un grupo terapéutico</strong></summary>
-        <p>
-          Se evalúa el nivel de ansiedad (0-100) en 15 participantes de una sesión
-          grupal. Supón que la curtosis resultante es alta (por ej., 4.2) y el sesgo
-          ligeramente positivo (0.60).
-        </p>
-        <p>
-          Esto indicaría que la mayoría de valores se concentran cerca de la media,
-          pero existe una cola extendida a la derecha (personas con ansiedad elevada)
-          y valores puntuales muy altos que generan un “apuntamiento” más marcado.
-        </p>
-      </details>
-    </section>
-
-    <!-- (Opcional) Pruebas de bondad de ajuste -->
-    <section class="contenido">
-      <details>
-        <summary><strong>Pruebas de bondad de ajuste</strong></summary>
-        <ul>
-          <li>Chi-cuadrado para una muestra</li>
-          <li>Kolmogorov-Smirnov</li>
-          <li>Shapiro-Wilk</li>
-        </ul>
-        <p>
-          Estas pruebas permiten evaluar si la distribución de la variable se ajusta a
-          una distribución teórica específica (por ejemplo, normal, poisson, etc.).
-        </p>
-      </details>
     </section>
   </main>
 
-  <!-- PIE DE PÁGINA -->
   <footer>
     <p>&copy; 2025 Estadística 2025</p>
   </footer>
