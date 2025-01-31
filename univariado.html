@@ -3,101 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Análisis Univariado (Cards Versión 1)</title>
+  <title>Análisis Univariado</title>
   <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link 
+  <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
     rel="stylesheet"
   />
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background-color: #f6f8fa;
-      color: #333;
-    }
-    header {
-      background-color: #2f6fad;
-      padding: 1rem;
-      color: white;
-    }
-    .logo h1 {
-      margin: 0;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1rem;
-      margin: 0;
-      padding: 0;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    nav a.active {
-      text-decoration: underline;
-    }
-    main {
-      max-width: 1200px;
-      margin: 2rem auto;
-      padding: 1rem;
-    }
-    .contenido h2 {
-      margin-top: 0;
-    }
-
-    /* Estilos para las "cards" */
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-    .card {
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-      padding: 1rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: transform 0.2s ease;
-    }
-    .card:hover {
-      transform: translateY(-3px);
-    }
-    .card h3 {
-      margin-top: 0;
-      font-size: 1.1rem;
-      color: #2f6fad;
-    }
-    .card p {
-      flex-grow: 1;
-    }
-    .card a {
-      margin-top: 1rem;
-      display: inline-block;
-      text-decoration: none;
-      color: #fff;
-      background-color: #2f6fad;
-      padding: 0.5rem 1rem;
-      border-radius: 4px;
-      transition: background-color 0.2s ease;
-      text-align: center;
-    }
-    .card a:hover {
-      background-color: #1d4c76;
-    }
-
-    footer {
-      background-color: #2f6fad;
-      padding: 1rem;
-      text-align: center;
-      color: #fff;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
@@ -118,43 +30,39 @@
     <section class="contenido">
       <h2>Análisis Univariado</h2>
       <p>
-        El Análisis Univariado se enfoca en describir y sintetizar las propiedades 
-        de <strong>una sola variable</strong> a la vez. A continuación, separamos 
+        El Análisis Univariado se enfoca en describir y sintetizar las propiedades
+        de <strong>una sola variable</strong> a la vez. A continuación, separamos
         los principales temas en subpáginas para facilitar la navegación.
       </p>
 
       <!-- Contenedor principal de "cards" -->
-      <div class="card-grid">
-        <!-- Card 1 -->
-        <div class="card">
+      <ul class="cards">
+        <li class="card">
           <h3>Estadísticos de centro</h3>
           <p>Definiciones y fórmulas para la media, mediana, moda, etc.</p>
-          <a href="univariado_centro.html">Ver más</a>
-        </div>
+          <a href="univariado_centro.html" class="btn-secundario">Ver más</a>
+        </li>
 
-        <!-- Card 2 -->
-        <div class="card">
+        <li class="card">
           <h3>Estadísticos de variabilidad y forma</h3>
           <p>Varianza, desviación estándar, curtosis, asimetría y más.</p>
-          <a href="univariado_dispersion_forma.html">Ver más</a>
-        </div>
+          <a href="univariado_dispersion_forma.html" class="btn-secundario">Ver más</a>
+        </li>
 
-        <!-- Card 3 -->
-        <div class="card">
+        <li class="card">
           <h3>Ejemplos aplicados</h3>
           <p>Resolución de ejercicios prácticos, paso a paso.</p>
-          <a href="univariado_ejemplos.html">Ver más</a>
-        </div>
+          <a href="univariado_ejemplos.html" class="btn-secundario">Ver más</a>
+        </li>
 
-        <!-- Card 4 -->
-        <div class="card">
+        <li class="card">
           <h3>Pruebas de bondad de ajuste</h3>
           <p>Aplicaciones del chi-cuadrado, Kolmogorov-Smirnov y otros.</p>
-          <a href="univariado_bondad.html">Ver más</a>
-        </div>
-      </div>
+          <a href="univariado_bondad.html" class="btn-secundario">Ver más</a>
+        </li>
+      </ul>
 
-      <p style="margin-top: 2rem;">
+      <p>
         En cada sección se incluyen definiciones, fórmulas y sugerencias para
         interpretar los resultados, especialmente en el contexto de la Psicología
         Social.
@@ -167,5 +75,3 @@
   </footer>
 </body>
 </html>
-
-
