@@ -25,7 +25,7 @@ permalink: /bivariado/
       <a href="#comparacion" class="btn-secundario">Ver detalles</a>
     </li>
     <li class="card">
-      <h3>Medición de la Relación</h3>
+      <h3>Técnicas de Relación</h3>
       <p>
         Cuantifica la fuerza y dirección de la asociación entre dos variables mediante técnicas correlacionales y de regresión.
       </p>
@@ -134,9 +134,9 @@ permalink: /bivariado/
   </ul>
 </section>
 
-<!-- Sección de Medición de la Relación -->
+<!-- Sección de Técnicas de Relación -->
 <section class="contenido" id="relacion">
-  <h2>Medición de la Relación</h2>
+  <h2>Técnicas de Relación</h2>
   <p>
     Las técnicas para medir la relación entre dos variables permiten cuantificar la fuerza y la dirección de la asociación, lo cual es fundamental para interpretar la naturaleza del vínculo entre ellas.
   </p>
