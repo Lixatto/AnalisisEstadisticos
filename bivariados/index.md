@@ -13,7 +13,7 @@ permalink: /bivariado/
 <section class="contenido">
   <h2>Análisis Bivariado</h2>
   <p>
-    El análisis bivariado se centra en explorar la relación entre dos variables. Dependiendo del objetivo del estudio, se puede abordar mediante técnicas de <strong>comparación de grupos</strong> o mediante la <strong>medición directa de la relación</strong> entre variables. A continuación se presenta una clasificación de las principales técnicas, detallando sus supuestos, fórmulas (usando notación LaTeX) y tamaños del efecto, lo que permite garantizar un análisis estadístico riguroso y una interpretación profunda de los resultados.
+    El análisis bivariado se centra en explorar la relación entre dos variables. Dependiendo del objetivo del estudio, se puede abordar mediante técnicas de <strong>comparación de grupos</strong>, <strong>relación</strong> o <strong>asociación entre variables categóricas</strong>. A continuación se presenta una clasificación de las principales técnicas, detallando sus supuestos, fórmulas (usando notación LaTeX) y tamaños del efecto, lo que permite garantizar un análisis estadístico riguroso y una interpretación profunda de los resultados.
   </p>
 
   <ul class="cards">
@@ -30,6 +30,13 @@ permalink: /bivariado/
         Cuantifica la fuerza y dirección de la asociación entre dos variables mediante técnicas correlacionales y de regresión.
       </p>
       <a href="#relacion" class="btn-secundario">Ver detalles</a>
+    </li>
+    <li class="card">
+      <h3>Asociación Categórica</h3>
+      <p>
+        Evalúa la relación entre variables categóricas a través de pruebas de chi-cuadrado y medidas de efecto.
+      </p>
+      <a href="#asociacion" class="btn-secundario">Ver detalles</a>
     </li>
     <li class="card">
       <h3>Bondad de Ajuste</h3>
@@ -56,7 +63,7 @@ permalink: /bivariado/
         <p><strong>Supuestos:</strong></p>
         <ul>
           <li>Independencia de las observaciones.</li>
-          <li>Normalidad en la distribución de la variable en cada grupo (además, se requiere que la distribución conjunta sea bivariante normal).</li>
+          <li>Normalidad en la distribución de la variable en cada grupo, así como normalidad bivariante en la combinación de ambas.</li>
           <li>Homogeneidad de varianzas (por ejemplo, evaluada mediante la prueba de Levene).</li>
           <li>Tamaño muestral adecuado (por lo general, \( n > 30 \) por grupo, aunque existen métodos robustos para muestras pequeñas).</li>
         </ul>
@@ -68,11 +75,13 @@ permalink: /bivariado/
         <p>
           $$ d = \frac{\bar{x}_1 - \bar{x}_2}{s_{\text{pooled}}} \quad \text{donde} \quad s_{\text{pooled}} = \sqrt{\frac{(n_1-1)s_1^2 + (n_2-1)s_2^2}{n_1+n_2-2}} $$
         </p>
-        <p><strong>Interpretación de \(d\) de Cohen:</strong></p>
+        <p>
+          <em>Definición:</em> La \(d\) de Cohen es una medida estandarizada de la diferencia entre dos medias. Se interpreta como:
+        </p>
         <ul>
-          <li>\(0.2\): Efecto pequeño</li>
-          <li>\(0.5\): Efecto mediano</li>
-          <li>\(0.8\) o mayor: Efecto grande</li>
+          <li>\(d \approx 0.2\): Efecto pequeño.</li>
+          <li>\(d \approx 0.5\): Efecto mediano.</li>
+          <li>\(d \geq 0.8\): Efecto grande.</li>
         </ul>
       </details>
     </li>
@@ -117,6 +126,13 @@ permalink: /bivariado/
         <p>
           $$ F = \frac{\text{MS}_{\text{between}}}{\text{MS}_{\text{within}}} $$
         </p>
+        <p>
+          <em>Donde:</em>
+          <br>
+          \(\text{MS}_{\text{between}} = \frac{SS_{\text{between}}}{df_{\text{between}}}\)  
+          y  
+          \(\text{MS}_{\text{within}} = \frac{SS_{\text{within}}}{df_{\text{within}}}\).
+        </p>
         <p><strong>Tamaño del efecto:</strong></p>
         <ul>
           <li>
@@ -126,7 +142,7 @@ permalink: /bivariado/
           <li>
             <strong>Omega cuadrado (\( \omega^2 \)):</strong> Ofrece una estimación menos sesgada del efecto.
             <br><em>Fórmula aproximada:</em>
-            $$ \omega^2 = \frac{\text{SS}_{\text{between}} - (\text{df}_{\text{between}} \cdot \text{MS}_{\text{within}})}{\text{SS}_{\text{total}} + \text{MS}_{\text{within}}} $$
+            $$ \omega^2 = \frac{SS_{\text{between}} - (df_{\text{between}} \cdot MS_{\text{within}})}{SS_{\text{total}} + MS_{\text{within}}} $$
           </li>
         </ul>
       </details>
@@ -172,7 +188,7 @@ permalink: /bivariado/
           <li>La relación entre las variables debe ser monotónica (no necesariamente lineal).</li>
           <li>No se requiere normalidad en los datos.</li>
         </ul>
-        <p><strong>Fórmula:</strong> Se calcula a partir de los rangos de los datos, lo que reduce la influencia de valores extremos.</p>
+        <p><strong>Fórmula:</strong> Se calcula a partir de los rangos de los datos, reduciendo la influencia de valores extremos.</p>
       </details>
     </li>
     <li>
@@ -194,6 +210,45 @@ permalink: /bivariado/
         <p><strong>Interpretación:</strong>  
           El coeficiente \(\beta_1\) indica el cambio promedio en la variable dependiente por cada unidad de cambio en la variable independiente.
         </p>
+      </details>
+    </li>
+  </ul>
+</section>
+
+<!-- Sección de Asociación entre Variables Categóricas -->
+<section class="contenido" id="asociacion">
+  <h2>Asociación entre Variables Categóricas</h2>
+  <p>
+    Cuando las variables son categóricas, la prueba de chi-cuadrado se utiliza para evaluar si existe asociación entre ellas. Además, se puede emplear una medida del tamaño del efecto, como el V de Cramer, para cuantificar la fuerza de la asociación.
+  </p>
+  <ul>
+    <li>
+      <strong>Prueba Chi-Cuadrado</strong>
+      <details>
+        <summary>Detalles</summary>
+        <p><strong>Descripción:</strong> Contrasta las frecuencias observadas en cada categoría con las frecuencias esperadas bajo la hipótesis de independencia.</p>
+        <p><strong>Supuestos:</strong></p>
+        <ul>
+          <li>Independencia de las observaciones.</li>
+          <li>Las frecuencias esperadas en cada celda deben ser mayores o iguales a 5 (o, en ocasiones, se utiliza una corrección para celdas pequeñas).</li>
+        </ul>
+        <p><strong>Fórmula:</strong></p>
+        <p>
+          $$ \chi^2 = \sum \frac{(O - E)^2}{E} $$
+        </p>
+        <p><strong>Medida del tamaño del efecto:</strong></p>
+        <p>
+          <em>V de Cramer:</em>
+          $$ V = \sqrt{\frac{\chi^2}{n(k-1)}} $$
+          <br>
+          donde \(n\) es el tamaño muestral y \(k\) es el número de filas o columnas (el menor de ambos).
+        </p>
+        <p><strong>Interpretación del V de Cramer:</strong></p>
+        <ul>
+          <li>\(V \approx 0.1\): Asociación débil.</li>
+          <li>\(V \approx 0.3\): Asociación moderada.</li>
+          <li>\(V \geq 0.5\): Asociación fuerte.</li>
+        </ul>
       </details>
     </li>
   </ul>
