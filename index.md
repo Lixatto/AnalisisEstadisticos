@@ -4,8 +4,6 @@ layout: default
 title: "Mi Sitio en GitHub Pages - Inicio"
 permalink: /
 ---
-
-
 <!-- Sección Hero -->
 <section class="hero">
   <h2>Bienvenido a mi primera web de análisis de datos</h2>
