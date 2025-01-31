@@ -4,6 +4,12 @@ title: "Análisis Bivariado"
 permalink: /bivariado/
 ---
 
+<!-- Carga MathJax para mostrar ecuaciones en formato LaTeX -->
+<script type="text/javascript" async
+  src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" async
+  id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 <section class="contenido">
   <h2>Análisis Bivariado</h2>
   <p>
@@ -239,5 +245,8 @@ permalink: /bivariado/
   <p>
     <strong>Ejemplo Aplicado:</strong><br>
     En un estudio sobre el impacto de un programa de intervención educativa, se evaluó el rendimiento académico de los estudiantes antes y después de la intervención utilizando la prueba t para muestras relacionadas. Los resultados indicaron un valor de \( t \) significativo (\( p < 0.01 \)) y un tamaño del efecto de \( d = 0.65 \), sugiriendo un efecto mediano. Además, para comparar el rendimiento entre tres grupos (control, intervención A e intervención B), se aplicó un ANOVA One-Way, que arrojó un \( \eta^2 = 0.12 \), lo que implica que el 12% de la varianza en el rendimiento académico se explica por el tipo de intervención.
+  </p>
+</section>
+
   </p>
 </section>
