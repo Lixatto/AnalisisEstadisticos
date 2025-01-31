@@ -4,6 +4,12 @@ title: "Análisis Multivariado"
 permalink: /multivariado/
 ---
 
+<!-- Carga MathJax para mostrar ecuaciones en formato LaTeX -->
+<script type="text/javascript" async
+  src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" async
+  id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 <section class="contenido">
   <h2>Análisis Multivariado</h2>
   <p>
@@ -49,15 +55,15 @@ permalink: /multivariado/
         <summary>Detalles</summary>
         <p>
           <em>Ecuación:</em> 
-          $$ y = \\beta_0 + \\beta_1x_1 + \\beta_2x_2 + \\dots + \\beta_kx_k + \\varepsilon $$
+          $$ y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \dots + \beta_k x_k + \varepsilon $$
         </p>
         <p>
           <em>Definición de Parámetros:</em>
           <ul>
-            <li><strong>y</strong>: Variable dependiente.</li>
-            <li><strong>\\(\\beta_0\\)</strong>: Intercepto o constante.</li>
-            <li><strong>\\(\\beta_i\\)</strong>: Coeficientes que representan el efecto de cada variable independiente \\(x_i\\) sobre y.</li>
-            <li><strong>\\(\\varepsilon\\)</strong>: Término de error o perturbación aleatoria.</li>
+            <li><strong>\(y\)</strong>: Variable dependiente.</li>
+            <li><strong>\(\beta_0\)</strong>: Intercepto o constante.</li>
+            <li><strong>\(\beta_i\)</strong>: Coeficientes que representan el efecto de cada variable independiente \(x_i\) sobre \(y\).</li>
+            <li><strong>\(\varepsilon\)</strong>: Término de error o perturbación aleatoria.</li>
           </ul>
         </p>
         <p>
@@ -71,7 +77,7 @@ permalink: /multivariado/
           </ul>
         </p>
         <p>
-          <em>Ejemplo:</em> Analizar el impacto de factores socioeconómicos (como nivel educativo, ingresos y condiciones de vivienda) en el rendimiento escolar de los estudiantes.
+          <em>Ejemplo:</em> Analizar el impacto de factores socioeconómicos (como nivel educativo, ingresos y condiciones de vivienda) en el rendimiento escolar.
         </p>
         <p>
           <em>Reflexión Crítica:</em> Aunque es una herramienta poderosa para la predicción y explicación, la regresión lineal múltiple es sensible a valores atípicos y a la multicolinealidad. Es crucial validar los supuestos antes de interpretar los coeficientes y considerar métodos alternativos si dichos supuestos se violan.
@@ -85,13 +91,13 @@ permalink: /multivariado/
         <summary>Detalles</summary>
         <p>
           <em>Ecuación:</em> 
-          $$ \\log\\left(\\frac{p}{1-p}\\right) = \\beta_0 + \\beta_1x_1 + \\dots + \\beta_kx_k $$
+          $$ \log\left(\frac{p}{1-p}\right) = \beta_0 + \beta_1 x_1 + \dots + \beta_k x_k $$
         </p>
         <p>
           <em>Definición de Parámetros:</em>
           <ul>
-            <li><strong>p</strong>: Probabilidad de que ocurra el evento de interés.</li>
-            <li><strong>\\(\\beta_0\\)</strong> y <strong>\\(\\beta_i\\)</strong>: Coeficientes del modelo que, a través de la función logit, relacionan los predictores con la probabilidad.</li>
+            <li><strong>\(p\)</strong>: Probabilidad de que ocurra el evento de interés.</li>
+            <li><strong>\(\beta_0\)</strong> y <strong>\(\beta_i\)</strong>: Coeficientes del modelo que, a través de la función logit, relacionan los predictores con la probabilidad.</li>
           </ul>
         </p>
         <p>
@@ -117,16 +123,16 @@ permalink: /multivariado/
         <summary>Detalles</summary>
         <p>
           <em>Ecuación:</em> 
-          $$ y_{ij} = \\mu + \\tau_i + \\beta (x_{ij} - \\bar{x}) + \\varepsilon_{ij} $$
+          $$ y_{ij} = \mu + \tau_i + \beta (x_{ij} - \bar{x}) + \varepsilon_{ij} $$
         </p>
         <p>
           <em>Definición de Parámetros:</em>
           <ul>
-            <li><strong>\\(y_{ij}\\)</strong>: Valor de la variable dependiente para el sujeto j en el grupo i.</li>
-            <li><strong>\\(\\mu\\)</strong>: Media general.</li>
-            <li><strong>\\(\\tau_i\\)</strong>: Efecto del grupo i.</li>
-            <li><strong>\\(\\beta\\)</strong>: Coeficiente asociado a la covariable \\(x\\).</li>
-            <li><strong>\\(\\varepsilon_{ij}\\)</strong>: Error aleatorio.</li>
+            <li><strong>\(y_{ij}\)</strong>: Valor de la variable dependiente para el sujeto \(j\) en el grupo \(i\).</li>
+            <li><strong>\(\mu\)</strong>: Media general.</li>
+            <li><strong>\(\tau_i\)</strong>: Efecto del grupo \(i\).</li>
+            <li><strong>\(\beta\)</strong>: Coeficiente asociado a la covariable \(x\).</li>
+            <li><strong>\(\varepsilon_{ij}\)</strong>: Error aleatorio.</li>
           </ul>
         </p>
         <p>
@@ -152,7 +158,7 @@ permalink: /multivariado/
         <summary>Detalles</summary>
         <p>
           <em>Concepto:</em>  
-          Se analizan conjuntamente varias variables dependientes, utilizando estadísticos como Wilks' Lambda, Pillai's Trace, Hotelling's Trace o Roy's Largest Root para determinar diferencias globales entre grupos.
+          Se analizan conjuntamente varias variables dependientes. Se utilizan estadísticos como Wilks' Lambda, Pillai's Trace, Hotelling's Trace o Roy's Largest Root para determinar diferencias globales entre grupos.
         </p>
         <p>
           <em>Supuestos:</em>
@@ -186,15 +192,15 @@ permalink: /multivariado/
         <summary>Detalles</summary>
         <p>
           <em>Modelo Factorial:</em>  
-          $$ \\mathbf{X} = \\mathbf{\\Lambda}\\mathbf{F} + \\mathbf{\\varepsilon} $$
+          $$ \mathbf{X} = \mathbf{\Lambda} \mathbf{F} + \mathbf{\varepsilon} $$
         </p>
         <p>
           <em>Definición de Parámetros:</em>
           <ul>
-            <li><strong>\\(\\mathbf{X}\\)</strong>: Vector de variables observadas.</li>
-            <li><strong>\\(\\mathbf{\\Lambda}\\)</strong>: Matriz de cargas factoriales que indica la relación entre cada variable y los factores.</li>
-            <li><strong>\\(\\mathbf{F}\\)</strong>: Vector de factores latentes.</li>
-            <li><strong>\\(\\mathbf{\\varepsilon}\\)</strong>: Errores específicos o únicos de cada variable.</li>
+            <li><strong>\(\mathbf{X}\)</strong>: Vector de variables observadas.</li>
+            <li><strong>\(\mathbf{\Lambda}\)</strong>: Matriz de cargas factoriales que indica la relación entre cada variable y los factores.</li>
+            <li><strong>\(\mathbf{F}\)</strong>: Vector de factores latentes.</li>
+            <li><strong>\(\mathbf{\varepsilon}\)</strong>: Errores específicos o únicos de cada variable.</li>
           </ul>
         </p>
         <p>
@@ -221,7 +227,7 @@ permalink: /multivariado/
         <summary>Detalles</summary>
         <p>
           <em>Modelo:</em>  
-          Similar al modelo factorial exploratorio, pero se establece a priori la asignación de variables a factores.
+          Se establece a priori la asignación de variables a factores, de modo similar al modelo factorial exploratorio.
         </p>
         <p>
           <em>Parámetros y Estadísticos de Ajuste:</em>
@@ -242,7 +248,7 @@ permalink: /multivariado/
           <em>Ejemplo:</em> Validar la estructura teórica de una escala de autoestima, donde se espera que ciertos ítems midan dimensiones específicas del constructo.
         </p>
         <p>
-          <em>Reflexión Crítica:</em> El AFC es una herramienta poderosa para confirmar hipótesis teóricas, pero su éxito depende de una formulación previa rigurosa y del cumplimiento de supuestos estadísticos. Los índices de ajuste deben interpretarse conjuntamente, ya que un buen ajuste en uno podría compensar deficiencias en otro.
+          <em>Reflexión Crítica:</em> El AFC es una herramienta poderosa para confirmar hipótesis teóricas, pero su éxito depende de una formulación previa rigurosa y del cumplimiento de supuestos estadísticos. Los índices de ajuste deben interpretarse conjuntamente.
         </p>
       </details>
     </li>
@@ -255,24 +261,24 @@ permalink: /multivariado/
           <em>Modelos Básicos:</em>
           <br>
           <strong>Modelo de 1 Parámetro (Rasch):</strong> 
-          $$ \\log\\left(\\frac{P_{ij}}{1-P_{ij}}\\right) = \\theta_i - b_j $$
+          $$ \log\left(\frac{P_{ij}}{1-P_{ij}}\right) = \theta_i - b_j $$
           <br>
           <strong>Modelo de 2 Parámetros:</strong>
-          $$ \\log\\left(\\frac{P_{ij}}{1-P_{ij}}\\right) = a_j(\\theta_i - b_j) $$
+          $$ \log\left(\frac{P_{ij}}{1-P_{ij}}\right) = a_j (\theta_i - b_j) $$
         </p>
         <p>
           <em>Definición de Parámetros:</em>
           <ul>
-            <li><strong>\\(P_{ij}\\)</strong>: Probabilidad de que el individuo i responda correctamente al ítem j.</li>
-            <li><strong>\\(\\theta_i\\)</strong>: Habilidad o rasgo latente del individuo i.</li>
-            <li><strong>\\(b_j\\)</strong>: Dificultad del ítem j.</li>
-            <li><strong>\\(a_j\\)</strong>: Parámetro de discriminación del ítem j (presente en modelos de 2 o más parámetros).</li>
+            <li><strong>\(P_{ij}\)</strong>: Probabilidad de que el individuo \(i\) responda correctamente al ítem \(j\).</li>
+            <li><strong>\(\theta_i\)</strong>: Habilidad o rasgo latente del individuo \(i\).</li>
+            <li><strong>\(b_j\)</strong>: Dificultad del ítem \(j\).</li>
+            <li><strong>\(a_j\)</strong>: Parámetro de discriminación del ítem \(j\) (presente en modelos de 2 o más parámetros).</li>
           </ul>
         </p>
         <p>
           <em>Supuestos:</em>
           <ul>
-            <li><strong>Independencia local:</strong> Las respuestas a los ítems son independientes entre sí, condicionadas a la habilidad \\(\\theta\\).</li>
+            <li><strong>Independencia local:</strong> Las respuestas a los ítems son independientes entre sí, condicionadas a la habilidad \(\theta\).</li>
             <li><strong>Monotonía:</strong> La probabilidad de respuesta correcta aumenta con la habilidad.</li>
             <li><strong>Invariancia del ítem:</strong> Los parámetros del ítem se mantienen constantes en diferentes subgrupos.</li>
           </ul>
@@ -295,20 +301,20 @@ permalink: /multivariado/
           <br>
           <strong>Modelo de Medición:</strong>
           <br>
-          $$ y = \\Lambda_y\\eta + \\varepsilon \\quad\\text{y}\\quad x = \\Lambda_x\\xi + \\delta $$
+          $$ y = \Lambda_y \eta + \varepsilon \quad \text{y} \quad x = \Lambda_x \xi + \delta $$
           <br>
           <strong>Modelo Estructural:</strong>
           <br>
-          $$ \\eta = B\\eta + \\Gamma\\xi + \\zeta $$
+          $$ \eta = B \eta + \Gamma \xi + \zeta $$
         </p>
         <p>
           <em>Definición de Parámetros:</em>
           <ul>
-            <li><strong>y</strong> y <strong>x</strong>: Variables observadas (endógenas y exógenas, respectivamente).</li>
-            <li><strong>\\(\\eta\\)</strong> y <strong>\\(\\xi\\)</strong>: Variables latentes dependientes e independientes.</li>
-            <li><strong>\\(\\Lambda_y\\)</strong> y <strong>\\(\\Lambda_x\\)</strong>: Matrices de cargas factoriales.</li>
-            <li><strong>B</strong> y <strong>\\(\\Gamma\\)</strong>: Coeficientes que describen las relaciones estructurales entre variables latentes.</li>
-            <li><strong>\\(\\varepsilon\\)</strong>, <strong>\\(\\delta\\)</strong> y <strong>\\(\\zeta\\)</strong>: Errores de medición y perturbaciones estructurales.</li>
+            <li><strong>\(y\)</strong> y <strong>\(x\)</strong>: Variables observadas (endógenas y exógenas, respectivamente).</li>
+            <li><strong>\(\eta\)</strong> y <strong>\(\xi\)</strong>: Variables latentes dependientes e independientes.</li>
+            <li><strong>\(\Lambda_y\)</strong> y <strong>\(\Lambda_x\)</strong>: Matrices de cargas factoriales.</li>
+            <li><strong>\(B\)</strong> y <strong>\(\Gamma\)</strong>: Coeficientes que describen las relaciones estructurales entre variables latentes.</li>
+            <li><strong>\(\varepsilon\)</strong>, <strong>\(\delta\)</strong> y <strong>\(\zeta\)</strong>: Errores de medición y perturbaciones estructurales.</li>
           </ul>
         </p>
         <p>
@@ -324,7 +330,7 @@ permalink: /multivariado/
           <em>Ejemplo:</em> Evaluar un modelo teórico en psicología donde se examina cómo factores socioeconómicos y emocionales (variables latentes) influyen en la salud mental, integrando indicadores observados de cada constructo.
         </p>
         <p>
-          <em>Reflexión Crítica:</em> El SEM permite abordar relaciones complejas y mediaciones, pero su correcta aplicación depende de una formulación teórica sólida y del riguroso cumplimiento de supuestos. Además, la interpretación de los índices de ajuste requiere una visión global del modelo y, en ocasiones, la consideración de modelos alternativos.
+          <em>Reflexión Crítica:</em> El SEM permite abordar relaciones complejas y mediaciones, pero su correcta aplicación depende de una formulación teórica sólida y del riguroso cumplimiento de supuestos. La interpretación de los índices de ajuste requiere una visión global del modelo y, en ocasiones, la consideración de modelos alternativos.
         </p>
       </details>
     </li>
@@ -337,14 +343,14 @@ permalink: /multivariado/
           <em>Enfoques y Ecuación (en el caso de K-means):</em>
           <br>
           Se busca minimizar la suma de distancias cuadráticas entre cada observación y el centroide del clúster:
-          $$ \\min \\sum_{j=1}^{K} \\sum_{x_i \\in C_j} \\|x_i - \\mu_j\\|^2 $$
+          $$ \min \sum_{j=1}^{K} \sum_{x_i \in C_j} \|x_i - \mu_j\|^2 $$
         </p>
         <p>
           <em>Definición de Parámetros:</em>
           <ul>
-            <li><strong>\\(x_i\\)</strong>: Vector de características de la observación i.</li>
-            <li><strong>\\(C_j\\)</strong>: Conjunto de observaciones asignadas al clúster j.</li>
-            <li><strong>\\(\\mu_j\\)</strong>: Centroide (media) del clúster j.</li>
+            <li><strong>\(x_i\)</strong>: Vector de características de la observación \(i\).</li>
+            <li><strong>\(C_j\)</strong>: Conjunto de observaciones asignadas al clúster \(j\).</li>
+            <li><strong>\(\mu_j\)</strong>: Centroide (media) del clúster \(j\).</li>
             <li><strong>K</strong>: Número de clústeres especificado a priori.</li>
           </ul>
         </p>
@@ -352,14 +358,14 @@ permalink: /multivariado/
           <em>Supuestos:</em>
           <ul>
             <li>Los clústeres tienen forma aproximadamente esférica y tamaños similares.</li>
-            <li>La elección del número de clústeres es crucial y debe justificarse mediante criterios (como el codo o índices de validez interna).</li>
+            <li>La elección del número de clústeres es crucial y debe justificarse mediante criterios (como el método del codo o índices de validez interna).</li>
           </ul>
         </p>
         <p>
           <em>Ejemplo:</em> Segmentación de clientes en función de sus hábitos de consumo y características demográficas.
         </p>
         <p>
-          <em>Reflexión Crítica:</em> Los métodos de clúster son altamente útiles para la segmentación, pero los resultados pueden ser sensibles a la estandarización de las variables, a la selección del algoritmo y a la distancia utilizada. Es recomendable validar los grupos obtenidos con análisis adicionales.
+          <em>Reflexión Crítica:</em> Los métodos de clúster son altamente útiles para la segmentación, pero los resultados pueden ser sensibles a la estandarización de las variables, a la selección del algoritmo y a la medida de distancia utilizada. Es recomendable validar los grupos obtenidos con análisis adicionales.
         </p>
       </details>
     </li>
@@ -371,14 +377,14 @@ permalink: /multivariado/
         <p>
           <em>Modelo:</em>
           Se asume que la probabilidad conjunta de las respuestas se expresa como:
-          $$ P(Y = y) = \\sum_{c=1}^{C} \\pi_c \\prod_{j=1}^{J} P(Y_j = y_j | c) $$
+          $$ P(\mathbf{Y} = \mathbf{y}) = \sum_{c=1}^{C} \pi_c \prod_{j=1}^{J} P(Y_j = y_j \mid c) $$
         </p>
         <p>
           <em>Definición de Parámetros:</em>
           <ul>
-            <li><strong>\\(\\pi_c\\)</strong>: Probabilidad de pertenencia a la clase latente c.</li>
-            <li><strong>\\(Y_j\\)</strong>: Respuesta observada en el ítem j.</li>
-            <li><strong>C</strong>: Número total de clases latentes.</li>
+            <li><strong>\(\pi_c\)</strong>: Probabilidad de pertenencia a la clase latente \(c\).</li>
+            <li><strong>\(Y_j\)</strong>: Respuesta observada en el ítem \(j\).</li>
+            <li><strong>\(C\)</strong>: Número total de clases latentes.</li>
           </ul>
         </p>
         <p>
