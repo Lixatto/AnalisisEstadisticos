@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Estadísticos de centro</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <h1>Estadística 2025</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="univariado.html">Univariado</a></li>
+        <li><a href="bivariado.html">Bivariado</a></li>
+        <li><a href="multivariado.html">Multivariado</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contenido">
+      <h2>Estadísticos de centro</h2>
+      <p>
+        Los estadísticos de centro permiten ubicar el “promedio” o la 
+        <em>tendencia central</em> de la distribución de datos. 
+      </p>
+      
+      <details open>
+        <summary><strong>Media</strong></summary>
+        <p>
+          La media (o promedio) es la suma de todos los valores dividida entre el
+          número total de observaciones. 
+        </p>
+        <pre><code>Fórmula:
+x̄ = (Σxᵢ) / n
+
+Donde:
+- xᵢ = valor i-ésimo
+- n  = número de observaciones
+        </code></pre>
+        <p>
+          Se considera un punto de equilibrio de la distribución, aunque puede 
+          verse afectada por valores extremos (outliers).
+        </p>
+      </details>
+
+      <details>
+        <summary><strong>Mediana</strong></summary>
+        <p>
+          La mediana divide la distribución en dos partes iguales. 
+          <br><strong>Si n es impar</strong>, es el valor central. 
+          <br><strong>Si n es par</strong>, es el promedio de los dos valores centrales.
+        </p>
+      </details>
+
+      <details>
+        <summary><strong>Moda</strong></summary>
+        <p>
+          La moda es el valor que aparece con mayor frecuencia. 
+          <br>Pueden existir distribuciones bimodales, trimodales, etc.
+        </p>
+      </details>
+
+      <details>
+        <summary><strong>Otros estadísticos de posición</strong></summary>
+        <p>
+          A veces se usan la <em>media recortada</em> (que excluye valores 
+          extremos) o la <em>media ponderada</em> (que asigna distintos pesos a 
+          ciertos datos), según el objetivo del análisis.
+        </p>
+      </details>
+    </section>
+
+    <!-- Link de retorno (opcional) -->
+    <section class="contenido">
+      <p>
+        <a href="univariado.html" class="btn-secundario">Volver al índice univariado</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Estadística 2025</p>
+  </footer>
+</body>
+</html>
