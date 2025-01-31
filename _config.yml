@@ -1,0 +1,13 @@
+# _config.yml
+title: "Estadística 2025"
+description: "Sitio de análisis estadístico en GitHub Pages"
+# Para que use el layout por defecto de Jekyll, si lo deseas:
+theme: minima
+
+# (Opcional) Plugins y configuraciones extra
+plugins:
+  - jekyll-feed
+
+# Otras configuraciones
+markdown: kramdown
+highlighter: rouge
