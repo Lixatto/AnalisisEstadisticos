@@ -2,12 +2,22 @@
    VARIABLES DE COLOR
 ------------------------- */
 :root {
-  --color-primario: #007acc;        /* Azul principal */
-  --color-primario-oscuro: #005f99; /* Azul un poco más oscuro */
-  --color-secundario: #f4f4f4;      /* Gris claro de fondo */
-  --color-texto: #333;              /* Texto principal */
-  --color-blanco: #fff;             /* Blanco */
+  --color-primario: #007acc;        /* Azul principal (modo claro) */
+  --color-primario-oscuro: #005f99; /* Azul oscuro (modo claro) */
+  --color-secundario: #f4f4f4;      /* Gris claro de fondo (modo claro) */
+  --color-texto: #333;              /* Texto principal (modo claro) */
+  --color-blanco: #fff;             /* Blanco (modo claro) */
   --fuente-base: 'Poppins', sans-serif;
+}
+
+/* MODO OSCURO (clase) */
+.modo-oscuro {
+  /* Cambiamos la paleta al modo morado + fondo oscuro */
+  --color-primario: #9c27b0;         /* Morado principal */
+  --color-primario-oscuro: #7b1fa2;  /* Morado más oscuro */
+  --color-secundario: #1a1a1a;       /* Fondo muy oscuro */
+  --color-texto: #f4f4f4;            /* Texto claro */
+  --color-blanco: #333;             /* Un gris para “blanco” en modo oscuro */
 }
 
 /* -----------------------
@@ -71,6 +81,24 @@ nav ul li a.active {
 }
 
 /* -----------------------
+   BOTÓN PRIMARIO
+------------------------- */
+.btn-primario {
+  text-decoration: none;
+  background-color: var(--color-blanco);
+  color: var(--color-primario-oscuro);
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primario:hover {
+  background-color: var(--color-secundario);
+}
+
+/* -----------------------
    SECCIÓN HERO
 ------------------------- */
 .hero {
@@ -94,19 +122,6 @@ nav ul li a.active {
   max-width: 600px;
   margin: 0.5rem auto 2rem;
   font-size: 1.1rem;
-}
-
-.btn-primario {
-  text-decoration: none;
-  background-color: var(--color-blanco);
-  color: var(--color-primario-oscuro);
-  padding: 0.75rem 1.5rem;
-  border-radius: 4px;
-  font-weight: 600;
-}
-
-.btn-primario:hover {
-  background-color: var(--color-secundario);
 }
 
 /* -----------------------
@@ -194,6 +209,7 @@ main {
   color: var(--color-blanco);
   text-decoration: none;
   border-radius: 4px;
+  transition: background-color 0.2s ease;
 }
 
 .btn-secundario:hover {
