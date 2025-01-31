@@ -145,6 +145,15 @@ main {
   gap: 1.5rem;
   justify-content: center;
   margin-top: 2rem;
+  list-style: none;   /* Quita viñetas de la lista */
+  margin: 2rem 0;     /* Ajusta si quieres más espacio */
+  padding: 0;         /* Elimina indentación por defecto */
+}
+
+.cards > li {
+  list-style: none; /* Asegura que no aparezca viñeta a nivel <li> */
+  margin: 0;
+  padding: 0;
 }
 
 .card {
