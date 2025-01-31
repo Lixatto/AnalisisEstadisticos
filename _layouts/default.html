@@ -1,0 +1,34 @@
+<!-- _layouts/default.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ page.title }} - {{ site.title }}</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" 
+    rel="stylesheet"
+  />
+  
+  <!-- Hoja de estilos -->
+  <!-- Usamos 'relative_url' para evitar problemas de rutas en GitHub Pages -->
+  <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+</head>
+<body>
+
+  {% include header.html %}
+
+  <!-- Contenido dinámico específico de cada página -->
+  <main>
+    {{ content }}
+  </main>
+
+  {% include footer.html %}
+
+  <!-- Script modo oscuro -->
+  <script src="{{ '/darkmode.js' | relative_url }}"></script>
+</body>
+</html>
