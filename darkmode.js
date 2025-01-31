@@ -1,12 +1,10 @@
+// darkmode.js
 document.addEventListener('DOMContentLoaded', () => {
-  // Referencia al body y al botón
   const body = document.querySelector('body');
   const toggleBtn = document.getElementById('toggleDarkMode');
 
-  // Si no existe un botón con ese ID, no hacemos nada
   if (!toggleBtn) return;
 
-  // Al hacer clic, alternamos la clase modo-oscuro
   toggleBtn.addEventListener('click', () => {
     body.classList.toggle('modo-oscuro');
 
@@ -19,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Al cargar la página, revisa si el usuario tenía modo oscuro
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme === 'dark') {
     body.classList.add('modo-oscuro');
