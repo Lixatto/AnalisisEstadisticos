@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pruebas de bondad de ajuste</title>
+  <title>Pruebas de Bondad de Ajuste</title>
+  <!-- Fuentes y estilo -->
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link 
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
@@ -11,7 +12,9 @@
   />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+  <!-- HEADER -->
   <header>
     <div class="logo">
       <h1>Estadística 2025</h1>
@@ -26,54 +29,243 @@
     </nav>
   </header>
 
+  <!-- CONTENIDO PRINCIPAL -->
   <main>
     <section class="contenido">
-      <h2>Pruebas de bondad de ajuste</h2>
+      <h2>Pruebas de Bondad de Ajuste</h2>
       <p>
-        Estas pruebas verifican si la distribución de la variable se ajusta a una 
-        distribución teórica específica (por ejemplo, normal, poisson, etc.).
+        Las pruebas de bondad de ajuste (o <em>Goodness-of-Fit Tests</em>) evalúan 
+        en qué medida la distribución de una variable **se ajusta** a un modelo 
+        teórico o distribución hipotética (p.e., Normal, Chi-Cuadrado, Poisson, 
+        etc.). En términos formales, se contrasta la hipótesis nula “los datos 
+        provienen de la distribución X” contra la alternativa “no se distribuyen 
+        según X”. 
+      </p>
+      <p>
+        Existen múltiples pruebas de bondad de ajuste; a continuación, presentamos 
+        tres de las más comunes para datos univariados:
+      </p>
+      <ol style="list-style: decimal inside;">
+        <li>Chi-Cuadrado para una muestra</li>
+        <li>Kolmogorov-Smirnov (K-S)</li>
+        <li>Shapiro-Wilk</li>
+      </ol>
+    </section>
+
+    <!-- CHI-CUADRADO -->
+    <section class="contenido">
+      <h3>1. Chi-Cuadrado para una muestra</h3>
+      <p>
+        Esta prueba contrasta las <strong>frecuencias observadas</strong> 
+        en un conjunto de categorías con las <strong>frecuencias esperadas</strong> 
+        según una distribución hipotética. Suele usarse con datos categóricos 
+        (nominales u ordinales) o cuando se han agrupado variables continuas 
+        en intervalos.
+      </p>
+      <details open>
+        <summary><strong>Concepto y fórmula</strong></summary>
+        <p>
+          Se define el estadístico Chi-Cuadrado (<em>χ²</em>) como:
+        </p>
+        <pre><code>χ² = Σ ( (Oᵢ - Eᵢ)² / Eᵢ )
+
+Donde:
+- Oᵢ = frecuencia observada en la categoría i
+- Eᵢ = frecuencia esperada en la categoría i
+</code></pre>
+        <p>
+          Cuanto más se alejen las frecuencias observadas de las esperadas, 
+          mayor será el valor de χ², y más evidencia habrá contra la hipótesis nula.
+        </p>
+      </details>
+
+      <details>
+        <summary><strong>Supuestos / Condiciones de uso</strong></summary>
+        <ul>
+          <li>
+            <strong>Tamaño de muestra adecuado</strong>: conviene que las frecuencias 
+            esperadas no sean demasiado pequeñas (al menos 5 por categoría, como guía).
+          </li>
+          <li>
+            <strong>Clasificación exhaustiva y excluyente</strong>: los datos deben 
+            estar categorizados de forma que cada observación entre en solo una 
+            categoría.
+          </li>
+          <li>
+            <strong>Independencia</strong>: cada observación debe ser independiente 
+            de las demás.
+          </li>
+        </ul>
+      </details>
+
+      <details>
+        <summary><strong>Ejemplo breve</strong></summary>
+        <p>
+          Supón que en un cuestionario de preferencia de canales de comunicación 
+          (Email, WhatsApp, Teléfono), se esperan proporciones teóricas de 
+          50%, 30% y 20% respectivamente. Se recoge una muestra de 100 personas 
+          y se observan 45, 40 y 15. Calculamos la χ²:
+        </p>
+        <pre><code>Frec. esperadas (Eᵢ) = [50, 30, 20] → (0.5*100, 0.3*100, 0.2*100)
+Frec. observadas (Oᵢ) = [45, 40, 15]
+
+χ² = Σ((Oᵢ - Eᵢ)² / Eᵢ) 
+    = ((45-50)²/50) + ((40-30)²/30) + ((15-20)²/20)
+</code></pre>
+        <p>
+          Si el valor obtenido de χ² es mayor que el crítico (o su p-valor &lt; 0.05),
+          concluimos que la distribución real difiere significativamente de la 
+          propuesta.
+        </p>
+      </details>
+    </section>
+
+    <!-- KOLMOGOROV-SMIRNOV -->
+    <section class="contenido">
+      <h3>2. Kolmogorov-Smirnov (K-S)</h3>
+      <p>
+        El test Kolmogorov-Smirnov contrasta una distribución empírica continua con 
+        una distribución teórica (por ej., normal, uniforme, exponencial). Es una 
+        prueba basada en la <em>función de distribución acumulada (CDF)</em>.
       </p>
 
       <details open>
-        <summary><strong>Chi-cuadrado para una muestra</strong></summary>
+        <summary><strong>Estadístico y lógica básica</strong></summary>
         <p>
-          Compara la frecuencia observada en cada categoría con las frecuencias 
-          esperadas según una distribución hipotética.
+          El test K-S calcula la <strong>máxima diferencia absoluta</strong> 
+          (<em>D</em>) entre la <strong>CDF observada</strong> y la 
+          <strong>CDF teórica</strong>:
+        </p>
+        <pre><code>D = max | Fₙ(x) - F(x) |
+
+Donde:
+- Fₙ(x) = CDF empírica (muestral)
+- F(x)  = CDF teórica (distribución hipotética)
+</code></pre>
+        <p>
+          Si D es grande, indica que las distribuciones difieren significativamente.
         </p>
       </details>
 
       <details>
-        <summary><strong>Kolmogorov-Smirnov</strong></summary>
-        <p>
-          Evalúa la máxima diferencia absoluta entre la función de distribución 
-          empírica y la teórica.
-        </p>
+        <summary><strong>Supuestos / Consideraciones</strong></summary>
+        <ul>
+          <li>
+            <strong>Nivel de medición</strong>: se aplica a datos continuos o 
+            métricos, aunque también se usa con datos discretos con adaptaciones.
+          </li>
+          <li>
+            <strong>Tamaño de muestra</strong>: funciona mejor con muestras 
+            medianas o grandes; con muestras muy pequeñas se recomiendan 
+            pruebas específicas como Shapiro-Wilk (para normalidad).
+          </li>
+          <li>
+            <strong>Versión K-S con corrección de Lilliefors</strong>: se usa para 
+            comprobar normalidad sin especificar de antemano la media y desviación 
+            estándar poblacionales.
+          </li>
+        </ul>
       </details>
 
       <details>
-        <summary><strong>Shapiro-Wilk</strong></summary>
+        <summary><strong>Ejemplo de uso</strong></summary>
         <p>
-          Muy usada para verificar la normalidad de una variable, especialmente con
-          tamaños de muestra pequeños o moderados.
+          Supongamos que tenemos 50 mediciones de la “autoestima” en una escala 
+          continua (0-100) y queremos verificar si estos datos siguen una 
+          <strong>distribución normal</strong>. Estimamos la media y la desviación 
+          estándar y luego comparamos la CDF empírica con la CDF normal 
+          correspondiente. Si la D calculada excede el valor crítico, rechazamos la 
+          normalidad.
         </p>
       </details>
-      
-      <p>
-        <em>Interpretación básica:</em> si el p-valor es menor a un nivel de 
-        significancia (por ejemplo 0.05), se rechaza la hipótesis nula de que 
-        “los datos siguen la distribución teórica”.
-      </p>
     </section>
 
+    <!-- SHAPIRO-WILK -->
+    <section class="contenido">
+      <h3>3. Shapiro-Wilk</h3>
+      <p>
+        Es una de las pruebas más habituales para contrastar la <strong>normalidad</strong> 
+        de una muestra, especialmente con <strong>tamaños pequeños o moderados</strong>. 
+        Suele considerarse más potente que Kolmogorov-Smirnov para esta tarea.
+      </p>
+
+      <details open>
+        <summary><strong>Definición del estadístico (W)</strong></summary>
+        <p>
+          El estadístico Shapiro-Wilk (W) se construye comparando los valores ordenados 
+          de la muestra contra los valores esperados en una distribución normal. Sin 
+          entrar en la derivación completa:
+        </p>
+        <pre><code>W = ( Σ aᵢ x₍ᵢ₎ )² / Σ (x₍ᵢ₎ - x̄)²
+
+Donde:
+- x₍ᵢ₎ = el i-ésimo valor ordenado
+- aᵢ   = coeficientes calculados asumiendo normalidad
+- x̄   = media de la muestra
+</code></pre>
+        <p>
+          Valores de W cercanos a 1 indican mayor ajuste a la normalidad, mientras que 
+          valores menores apuntan a desviaciones.
+        </p>
+      </details>
+
+      <details>
+        <summary><strong>Interpretación y uso</strong></summary>
+        <p>
+          Si el p-valor asociado a W es < 0.05 (nivel habitual), se rechaza la hipótesis 
+          nula de normalidad. 
+        </p>
+        <p>
+          <strong>Ejemplo:</strong> supongamos una muestra de 20 puntajes de 
+          “ansiedad” (0-100). Aplicando Shapiro-Wilk obtenemos W=0.91, p=0.045. 
+          Con un α=0.05, concluimos que los datos no siguen una distribución normal.
+        </p>
+        <ul style="list-style: circle inside;">
+          <li>
+            <em>Atención:</em> en muestras muy grandes, es frecuente obtener p&lt;0.05 
+            aunque las desviaciones sean mínimas. Siempre conviene complementar con 
+            métodos gráficos (histograma, Q-Q plot).
+          </li>
+        </ul>
+      </details>
+    </section>
+
+    <!-- CONSIDERACIONES ADICIONALES -->
+    <section class="contenido">
+      <h3>Consideraciones finales</h3>
+      <ul>
+        <li>
+          <strong>Tamaño muestral:</strong> Algunas pruebas (Kolmogorov-Smirnov, 
+          Shapiro-Wilk) pueden tener potencia limitada con muestras muy pequeñas o 
+          verse demasiado sensibles con muestras muy grandes.
+        </li>
+        <li>
+          <strong>Importancia de la visualización:</strong> Complementar con 
+          histogramas, boxplots o Q-Q plots ayuda a entender cómo se comportan los 
+          datos realmente.
+        </li>
+        <li>
+          <strong>Distribuciones no “clásicas”:</strong> Existen pruebas específicas 
+          para testar otras distribuciones (e.g., Poisson, exponencial) o casos con 
+          datos categóricos o discretos (e.g., pruebas basadas en <em>likelihood</em>).
+        </li>
+      </ul>
+    </section>
+
+    <!-- BOTÓN DE REGRESO -->
     <section class="contenido">
       <p>
-        <a href="univariado.html" class="btn-secundario">Volver al índice univariado</a>
+        <a href="univariado.html" class="btn-secundario">
+          Volver al índice univariado
+        </a>
       </p>
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer>
     <p>&copy; 2025 Estadística 2025</p>
   </footer>
 </body>
 </html>
+
