@@ -13,35 +13,48 @@ permalink: /bivariado/
 <section class="contenido">
   <h2>Análisis Bivariado</h2>
   <p>
-    El análisis bivariado se centra en explorar la relación entre dos variables. Dependiendo del objetivo del estudio, se puede abordar mediante técnicas de <strong>comparación de grupos</strong>, <strong>relación</strong> o <strong>asociación entre variables categóricas</strong>. A continuación se presenta una clasificación de las principales técnicas, detallando sus supuestos, fórmulas (usando notación LaTeX) y tamaños del efecto, lo que permite garantizar un análisis estadístico riguroso y una interpretación profunda de los resultados.
+    El análisis bivariado se centra en explorar la relación entre dos variables. Dependiendo del objetivo del estudio, se puede abordar mediante:
   </p>
-
+  <ul>
+    <li>
+      <strong>Comparación de grupos</strong>: Determina si existen diferencias significativas en la media de una variable dependiente entre dos o más grupos.
+    </li>
+    <li>
+      <strong>Técnicas de relación</strong>: Cuantifican la fuerza y dirección de la asociación entre dos variables, ya sea mediante métodos correlacionales o de regresión.
+    </li>
+    <li>
+      <strong>Asociación entre variables categóricas</strong>: Evalúa la relación entre variables cualitativas, utilizando pruebas como la chi-cuadrado.
+    </li>
+  </ul>
+  <p>
+    A continuación se presenta una clasificación de las principales técnicas, con sus definiciones teóricas, fórmulas (usando notación LaTeX), definición de cada parámetro, supuestos y tamaños del efecto.
+  </p>
   <ul class="cards">
     <li class="card">
       <h3>Comparación de Grupos</h3>
       <p>
-        Evalúa si existen diferencias significativas en la media de una variable dependiente entre dos o más grupos.
+        Evalúa diferencias en las medias entre grupos.
       </p>
       <a href="#comparacion" class="btn-secundario">Ver detalles</a>
     </li>
     <li class="card">
       <h3>Técnicas de Relación</h3>
       <p>
-        Cuantifica la fuerza y dirección de la asociación entre dos variables mediante técnicas correlacionales y de regresión.
+        Miden la fuerza y dirección de la relación entre dos variables.
       </p>
       <a href="#relacion" class="btn-secundario">Ver detalles</a>
     </li>
     <li class="card">
       <h3>Asociación Categórica</h3>
       <p>
-        Evalúa la relación entre variables categóricas a través de pruebas de chi-cuadrado y medidas de efecto.
+        Analiza la relación entre variables cualitativas.
       </p>
       <a href="#asociacion" class="btn-secundario">Ver detalles</a>
     </li>
     <li class="card">
       <h3>Bondad de Ajuste</h3>
       <p>
-        Evalúa el ajuste de los modelos de regresión y la calidad de la predicción, complementando el análisis estadístico.
+        Evalúa la calidad del ajuste en modelos de regresión.
       </p>
       <a href="#bondad" class="btn-secundario">Ver detalles</a>
     </li>
@@ -52,31 +65,43 @@ permalink: /bivariado/
 <section class="contenido" id="comparacion">
   <h2>Comparación de Grupos</h2>
   <p>
-    En estudios comparativos se utilizan diversas pruebas estadísticas para determinar si existen diferencias entre grupos. Es fundamental verificar los supuestos y reportar el tamaño del efecto, lo que aporta información sobre la magnitud práctica de los hallazgos.
+    Estas pruebas se utilizan para determinar si existen diferencias significativas en la media de una variable entre dos o más grupos. Se deben cumplir ciertos supuestos y, además, es importante reportar el tamaño del efecto para evaluar la relevancia práctica.
   </p>
+  
   <ul>
+    <!-- Prueba t para muestras independientes -->
     <li>
       <strong>Prueba t para muestras independientes</strong>
       <details>
         <summary>Detalles</summary>
-        <p><strong>Descripción:</strong> Compara las medias de dos grupos independientes.</p>
+        <p><strong>Definición teórica:</strong>  
+          Esta prueba compara las medias de dos grupos independientes para determinar si la diferencia observada es estadísticamente significativa. Se utiliza en estudios experimentales y observacionales cuando se asume que las dos muestras no están relacionadas.
+        </p>
         <p><strong>Supuestos:</strong></p>
         <ul>
-          <li>Independencia de las observaciones.</li>
-          <li>Normalidad en la distribución de la variable en cada grupo, así como normalidad bivariante en la combinación de ambas.</li>
-          <li>Homogeneidad de varianzas (por ejemplo, evaluada mediante la prueba de Levene).</li>
-          <li>Tamaño muestral adecuado (por lo general, \( n > 30 \) por grupo, aunque existen métodos robustos para muestras pequeñas).</li>
+          <li>Las observaciones son independientes.</li>
+          <li>La variable en cada grupo se distribuye de forma normal y, en conjunto, se asume normalidad bivariante.</li>
+          <li>Homogeneidad de varianzas (se puede evaluar mediante la prueba de Levene).</li>
+          <li>Tamaño muestral adecuado (usualmente \( n > 30 \) por grupo, aunque existen métodos robustos para muestras pequeñas).</li>
         </ul>
         <p><strong>Fórmula del estadístico t:</strong></p>
         <p>
           $$ t = \frac{\bar{x}_1 - \bar{x}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}} $$
         </p>
+        <p>
+          <em>Donde:</em>
+          <ul>
+            <li>\(\bar{x}_1\) y \(\bar{x}_2\): Medias de los grupos 1 y 2, respectivamente.</li>
+            <li>\(s_1^2\) y \(s_2^2\): Varianzas de los grupos 1 y 2.</li>
+            <li>\(n_1\) y \(n_2\): Tamaños muestrales de cada grupo.</li>
+          </ul>
+        </p>
         <p><strong>Tamaño del efecto (d de Cohen):</strong></p>
         <p>
-          $$ d = \frac{\bar{x}_1 - \bar{x}_2}{s_{\text{pooled}}} \quad \text{donde} \quad s_{\text{pooled}} = \sqrt{\frac{(n_1-1)s_1^2 + (n_2-1)s_2^2}{n_1+n_2-2}} $$
+          $$ d = \frac{\bar{x}_1 - \bar{x}_2}{s_{\text{pooled}}} \quad \text{con} \quad s_{\text{pooled}} = \sqrt{\frac{(n_1-1)s_1^2 + (n_2-1)s_2^2}{n_1+n_2-2}} $$
         </p>
         <p>
-          <em>Definición:</em> La \(d\) de Cohen es una medida estandarizada de la diferencia entre dos medias. Se interpreta como:
+          <em>Definición:</em> El \(d\) de Cohen es una medida estandarizada que cuantifica la magnitud de la diferencia entre dos medias:
         </p>
         <ul>
           <li>\(d \approx 0.2\): Efecto pequeño.</li>
@@ -85,25 +110,31 @@ permalink: /bivariado/
         </ul>
       </details>
     </li>
+    
+    <!-- Prueba t para muestras relacionadas (pareadas) -->
     <li>
       <strong>Prueba t para muestras relacionadas (pareadas)</strong>
       <details>
         <summary>Detalles</summary>
-        <p><strong>Descripción:</strong> Compara las medias de dos condiciones relacionadas (por ejemplo, mediciones repetidas en el mismo grupo).</p>
+        <p><strong>Definición teórica:</strong>  
+          Se utiliza para comparar las medias de dos condiciones que provienen de la misma muestra (por ejemplo, mediciones pre y post intervención). Permite determinar si el cambio en la variable de interés es estadísticamente significativo.
+        </p>
         <p><strong>Supuestos:</strong></p>
         <ul>
-          <li>Normalidad en la distribución de las diferencias entre las mediciones.</li>
-          <li>Independencia de las diferencias observadas.</li>
+          <li>Las diferencias entre las mediciones deben seguir una distribución normal.</li>
+          <li>Las observaciones (diferencias) son independientes.</li>
         </ul>
         <p><strong>Fórmula del estadístico t para muestras pareadas:</strong></p>
         <p>
-          $$ t = \frac{\bar{d}}{s_d / \sqrt{n}} $$
-          <br>
-          donde:
-          <br>
-          \(\bar{d}\) = media de las diferencias,  
-          \(s_d\) = desviación estándar de las diferencias,  
-          \(n\) = número de pares.
+          $$ t = \frac{\bar{d}}{s_d/\sqrt{n}} $$
+        </p>
+        <p>
+          <em>Donde:</em>
+          <ul>
+            <li>\(\bar{d}\): Media de las diferencias entre las dos mediciones.</li>
+            <li>\(s_d\): Desviación estándar de las diferencias.</li>
+            <li>\(n\): Número de pares.</li>
+          </ul>
         </p>
         <p><strong>Tamaño del efecto (d de Cohen para muestras pareadas):</strong></p>
         <p>
@@ -111,37 +142,45 @@ permalink: /bivariado/
         </p>
       </details>
     </li>
+    
+    <!-- ANOVA One-Way -->
     <li>
       <strong>ANOVA One-Way</strong>
       <details>
         <summary>Detalles</summary>
-        <p><strong>Descripción:</strong> Compara las medias de tres o más grupos independientes.</p>
+        <p><strong>Definición teórica:</strong>  
+          El ANOVA One-Way se utiliza para comparar las medias de tres o más grupos independientes para determinar si al menos uno de ellos difiere significativamente del resto. Se basa en la partición de la variabilidad total en componentes entre grupos y dentro de los grupos.
+        </p>
         <p><strong>Supuestos:</strong></p>
         <ul>
           <li>Independencia de las observaciones.</li>
           <li>Normalidad en la distribución de la variable dependiente en cada grupo.</li>
           <li>Homogeneidad de varianzas entre los grupos.</li>
         </ul>
-        <p><strong>Estadístico F:</strong></p>
+        <p><strong>Fórmula del estadístico F:</strong></p>
         <p>
           $$ F = \frac{\text{MS}_{\text{between}}}{\text{MS}_{\text{within}}} $$
         </p>
         <p>
           <em>Donde:</em>
-          <br>
-          \(\text{MS}_{\text{between}} = \frac{SS_{\text{between}}}{df_{\text{between}}}\)  
-          y  
-          \(\text{MS}_{\text{within}} = \frac{SS_{\text{within}}}{df_{\text{within}}}\).
+          <ul>
+            <li>\(\text{MS}_{\text{between}} = \dfrac{SS_{\text{between}}}{df_{\text{between}}}\): Media de los cuadrados entre grupos.</li>
+            <li>\(\text{MS}_{\text{within}} = \dfrac{SS_{\text{within}}}{df_{\text{within}}}\): Media de los cuadrados dentro de los grupos.</li>
+            <li>\(SS_{\text{between}}\): Suma de cuadrados entre grupos.</li>
+            <li>\(SS_{\text{within}}\): Suma de cuadrados dentro de los grupos.</li>
+            <li>\(df_{\text{between}}\) y \(df_{\text{within}}\): Grados de libertad correspondientes.</li>
+          </ul>
         </p>
         <p><strong>Tamaño del efecto:</strong></p>
         <ul>
           <li>
-            <strong>Eta cuadrado (\( \eta^2 \)):</strong> Indica la proporción de varianza total explicada por el factor.
-            <br><em>Interpretación:</em> \(0.01\) (efecto pequeño), \(0.06\) (efecto mediano), \(0.14\) (efecto grande).
+            <strong>Eta cuadrado (\( \eta^2 \)):</strong> 
+            $$ \eta^2 = \frac{SS_{\text{between}}}{SS_{\text{total}}} $$
+            <br>
+            <em>Interpretación:</em> \(0.01\) (efecto pequeño), \(0.06\) (efecto mediano), \(0.14\) (efecto grande).
           </li>
           <li>
-            <strong>Omega cuadrado (\( \omega^2 \)):</strong> Ofrece una estimación menos sesgada del efecto.
-            <br><em>Fórmula aproximada:</em>
+            <strong>Omega cuadrado (\( \omega^2 \)):</strong> 
             $$ \omega^2 = \frac{SS_{\text{between}} - (df_{\text{between}} \cdot MS_{\text{within}})}{SS_{\text{total}} + MS_{\text{within}}} $$
           </li>
         </ul>
@@ -154,61 +193,88 @@ permalink: /bivariado/
 <section class="contenido" id="relacion">
   <h2>Técnicas de Relación</h2>
   <p>
-    Las técnicas para medir la relación entre dos variables permiten cuantificar la fuerza y la dirección de la asociación, lo cual es fundamental para interpretar la naturaleza del vínculo entre ellas.
+    Estas técnicas cuantifican la fuerza y dirección de la asociación entre dos variables.
   </p>
   <ul>
+    <!-- Coeficiente de Pearson -->
     <li>
       <strong>Coeficiente de Pearson</strong>
       <details>
         <summary>Detalles</summary>
-        <p><strong>Descripción:</strong> Evalúa la fuerza y dirección de la relación lineal entre dos variables cuantitativas.</p>
+        <p><strong>Definición teórica:</strong>  
+          Mide la fuerza y dirección de la relación lineal entre dos variables cuantitativas. Es sensible a valores atípicos y requiere que la distribución conjunta de las variables sea normal (normalidad bivariada).
+        </p>
         <p><strong>Supuestos:</strong></p>
         <ul>
-          <li>Existencia de una relación lineal entre las variables.</li>
-          <li>Normalidad univariada de cada variable.</li>
-          <li>Normalidad bivariada: la combinación conjunta de las variables debe seguir una distribución normal.</li>
-          <li>Ausencia de valores atípicos extremos que puedan distorsionar la correlación.</li>
+          <li>Relación lineal entre las variables.</li>
+          <li>Normalidad univariada de cada variable y normalidad bivariada conjunta.</li>
+          <li>Ausencia de valores atípicos extremos.</li>
         </ul>
         <p><strong>Fórmula:</strong></p>
         <p>
           $$ r = \frac{\sum (x - \bar{x})(y - \bar{y})}{\sqrt{\sum (x - \bar{x})^2 \, \sum (y - \bar{y})^2}} $$
         </p>
+        <p>
+          <em>Donde:</em>
+          <ul>
+            <li>\(x\) y \(y\): Valores de las variables.</li>
+            <li>\(\bar{x}\) y \(\bar{y}\): Medias de \(x\) y \(y\), respectivamente.</li>
+          </ul>
+        </p>
         <p><strong>Interpretación:</strong>  
-          El coeficiente \(r\) varía entre \(-1\) y \(1\). Valores cercanos a \(-1\) o \(1\) indican una relación lineal fuerte (negativa o positiva, respectivamente), mientras que valores cercanos a \(0\) indican una relación débil o nula.
+          \(r\) varía entre \(-1\) y \(1\). Valores cercanos a \(-1\) o \(1\) indican una fuerte relación lineal (negativa o positiva, respectivamente), mientras que valores cercanos a \(0\) indican poca o ninguna relación lineal.
         </p>
       </details>
     </li>
+    
+    <!-- Coeficiente de Spearman -->
     <li>
       <strong>Coeficiente de Spearman</strong>
       <details>
         <summary>Detalles</summary>
-        <p><strong>Descripción:</strong> Mide la relación monotónica entre dos variables, siendo adecuado para datos ordinales o cuando no se cumple la normalidad.</p>
+        <p><strong>Definición teórica:</strong>  
+          Mide la relación monotónica entre dos variables mediante el uso de rangos. Es apropiado cuando los datos son ordinales o cuando no se cumple la normalidad.
+        </p>
         <p><strong>Supuestos:</strong></p>
         <ul>
           <li>La relación entre las variables debe ser monotónica (no necesariamente lineal).</li>
-          <li>No se requiere normalidad en los datos.</li>
+          <li>No requiere normalidad en los datos.</li>
         </ul>
-        <p><strong>Fórmula:</strong> Se calcula a partir de los rangos de los datos, reduciendo la influencia de valores extremos.</p>
+        <p><strong>Fórmula:</strong>  
+          Se calcula aplicando la fórmula de Pearson a los rangos de \(x\) y \(y\).
+        </p>
       </details>
     </li>
+    
+    <!-- Regresión Lineal Simple -->
     <li>
       <strong>Regresión Lineal Simple</strong>
       <details>
         <summary>Detalles</summary>
-        <p><strong>Descripción:</strong> Modela la relación entre una variable dependiente y una variable independiente, permitiendo la predicción y el análisis del impacto de la variable predictora.</p>
+        <p><strong>Definición teórica:</strong>  
+          Este modelo estima la relación lineal entre una variable dependiente \(y\) y una variable independiente \(x\). Permite la predicción y el análisis del efecto de \(x\) sobre \(y\).
+        </p>
         <p><strong>Supuestos:</strong></p>
         <ul>
-          <li>Linealidad en la relación entre las variables.</li>
+          <li>Relación lineal entre \(x\) e \(y\).</li>
           <li>Independencia de los errores.</li>
-          <li>Homoscedasticidad: varianza constante de los errores a lo largo de la variable independiente.</li>
+          <li>Homoscedasticidad: la varianza de los errores es constante para todos los valores de \(x\).</li>
           <li>Normalidad de los errores.</li>
         </ul>
         <p><strong>Fórmula:</strong></p>
         <p>
           $$ y = \beta_0 + \beta_1 x + \varepsilon $$
         </p>
+        <p>
+          <em>Donde:</em>
+          <ul>
+            <li>\(\beta_0\): Intercepto, el valor de \(y\) cuando \(x = 0\).</li>
+            <li>\(\beta_1\): Pendiente, representa el cambio en \(y\) por cada unidad de cambio en \(x\).</li>
+            <li>\(\varepsilon\): Error o perturbación aleatoria.</li>
+          </ul>
+        </p>
         <p><strong>Interpretación:</strong>  
-          El coeficiente \(\beta_1\) indica el cambio promedio en la variable dependiente por cada unidad de cambio en la variable independiente.
+          \(\beta_1\) indica el efecto promedio de \(x\) sobre \(y\). Un valor positivo implica una relación directa, mientras que uno negativo implica una relación inversa.
         </p>
       </details>
     </li>
@@ -219,29 +285,38 @@ permalink: /bivariado/
 <section class="contenido" id="asociacion">
   <h2>Asociación entre Variables Categóricas</h2>
   <p>
-    Cuando las variables son categóricas, la prueba de chi-cuadrado se utiliza para evaluar si existe asociación entre ellas. Además, se puede emplear una medida del tamaño del efecto, como el V de Cramer, para cuantificar la fuerza de la asociación.
+    Cuando las variables son categóricas, se utiliza la prueba chi-cuadrado para determinar si existe una relación o asociación entre ellas.
   </p>
   <ul>
     <li>
       <strong>Prueba Chi-Cuadrado</strong>
       <details>
         <summary>Detalles</summary>
-        <p><strong>Descripción:</strong> Contrasta las frecuencias observadas en cada categoría con las frecuencias esperadas bajo la hipótesis de independencia.</p>
+        <p><strong>Definición teórica:</strong>  
+          Esta prueba compara las frecuencias observadas con las frecuencias esperadas bajo la hipótesis de independencia entre dos variables categóricas. Se utiliza para evaluar si la distribución de una variable es diferente según los niveles de otra.
+        </p>
         <p><strong>Supuestos:</strong></p>
         <ul>
-          <li>Independencia de las observaciones.</li>
-          <li>Las frecuencias esperadas en cada celda deben ser mayores o iguales a 5 (o, en ocasiones, se utiliza una corrección para celdas pequeñas).</li>
+          <li>Las observaciones son independientes.</li>
+          <li>Las frecuencias esperadas en cada celda deben ser al menos 5 (o se debe aplicar una corrección en caso contrario).</li>
         </ul>
         <p><strong>Fórmula:</strong></p>
         <p>
           $$ \chi^2 = \sum \frac{(O - E)^2}{E} $$
+        </p>
+        <p>
+          <em>Donde:</em>
+          <ul>
+            <li>\(O\): Frecuencia observada en cada celda.</li>
+            <li>\(E\): Frecuencia esperada en cada celda, calculada bajo la hipótesis de independencia.</li>
+          </ul>
         </p>
         <p><strong>Medida del tamaño del efecto:</strong></p>
         <p>
           <em>V de Cramer:</em>
           $$ V = \sqrt{\frac{\chi^2}{n(k-1)}} $$
           <br>
-          donde \(n\) es el tamaño muestral y \(k\) es el número de filas o columnas (el menor de ambos).
+          donde \(n\) es el tamaño muestral y \(k\) es el número mínimo de categorías entre filas y columnas.
         </p>
         <p><strong>Interpretación del V de Cramer:</strong></p>
         <ul>
@@ -258,19 +333,29 @@ permalink: /bivariado/
 <section class="contenido" id="bondad">
   <h2>Bondad de Ajuste en Modelos de Regresión</h2>
   <p>
-    Además de analizar la significación estadística y los tamaños del efecto, es fundamental evaluar la bondad de ajuste del modelo. Esto se logra mediante el análisis de indicadores como el coeficiente de determinación y el examen de los residuos.
+    La bondad de ajuste evalúa qué tan bien el modelo de regresión predice la variable dependiente. Se utilizan indicadores como el coeficiente de determinación y se analiza el comportamiento de los residuos.
   </p>
   <ul>
     <li>
       <strong>Coeficiente de Determinación (\( R^2 \))</strong>
       <details>
         <summary>Detalles</summary>
+        <p><strong>Definición teórica:</strong>  
+          \( R^2 \) indica la proporción de la varianza total de la variable dependiente que es explicada por el modelo. Es una medida de la calidad de la predicción.
+        </p>
+        <p><strong>Ecuación:</strong></p>
         <p>
-          <em>Ecuación:</em>
           $$ R^2 = 1 - \frac{SS_{\text{residual}}}{SS_{\text{total}}} $$
         </p>
         <p>
-          <em>Interpretación:</em> Indica la proporción de varianza de la variable dependiente explicada por el modelo. Un \( R^2 \) alto sugiere un buen ajuste, aunque se debe evaluar en conjunto con otros criterios, especialmente en modelos complejos.
+          <em>Donde:</em>
+          <ul>
+            <li>\(SS_{\text{residual}}\): Suma de cuadrados de los residuos (errores).</li>
+            <li>\(SS_{\text{total}}\): Suma total de cuadrados (variación total de la variable dependiente).</li>
+          </ul>
+        </p>
+        <p><strong>Interpretación:</strong>  
+          Valores cercanos a 1 indican un buen ajuste; sin embargo, en modelos complejos se recomienda analizar \( R^2 \) junto con otros criterios.
         </p>
       </details>
     </li>
@@ -278,13 +363,13 @@ permalink: /bivariado/
       <strong>Análisis de Residuos</strong>
       <details>
         <summary>Detalles</summary>
-        <p>
-          Se recomienda examinar la distribución y patrones de los residuos:
+        <p><strong>Definición teórica:</strong>  
+          Se examina la distribución de los residuos para detectar patrones que puedan indicar problemas con el modelo (por ejemplo, heteroscedasticidad o valores atípicos). Un buen modelo muestra residuos aleatorios sin patrones evidentes.
         </p>
         <ul>
-          <li>Los residuos deben estar distribuidos de forma aleatoria, sin patrones sistemáticos.</li>
-          <li>Se debe comprobar la normalidad de los residuos (por ejemplo, con una prueba de Shapiro-Wilk o un gráfico Q-Q).</li>
-          <li>La homogeneidad de la varianza de los residuos refuerza la validez del modelo.</li>
+          <li>Los residuos deben distribuirse aleatoriamente.</li>
+          <li>Se debe comprobar la normalidad de los residuos (prueba de Shapiro-Wilk o gráfico Q-Q).</li>
+          <li>La homogeneidad de la varianza de los residuos respalda la validez del modelo.</li>
         </ul>
       </details>
     </li>
@@ -295,10 +380,11 @@ permalink: /bivariado/
 <section class="contenido">
   <h2>Consideraciones Finales y Ejemplo Aplicado</h2>
   <p>
-    La correcta aplicación de las técnicas bivariadas exige no solo la verificación rigurosa de los supuestos, sino también la presentación de los tamaños del efecto y la evaluación de la bondad de ajuste, lo que permite interpretar la relevancia práctica de los resultados más allá de la significación estadística.
+    La aplicación correcta de las técnicas bivariadas requiere verificar de forma rigurosa los supuestos, interpretar adecuadamente los tamaños del efecto y evaluar la bondad de ajuste del modelo. Esto permite interpretar la relevancia práctica de los resultados, complementando la significación estadística.
   </p>
   <p>
     <strong>Ejemplo Aplicado:</strong><br>
-    En un estudio sobre el impacto de un programa de intervención educativa, se evaluó el rendimiento académico de los estudiantes antes y después de la intervención utilizando la prueba t para muestras relacionadas. Los resultados indicaron un valor de \( t \) significativo (\( p < 0.01 \)) y un tamaño del efecto de \( d = 0.65 \), sugiriendo un efecto mediano. Además, para comparar el rendimiento entre tres grupos (control, intervención A e intervención B), se aplicó un ANOVA One-Way, que arrojó un \( \eta^2 = 0.12 \), lo que implica que el 12% de la varianza en el rendimiento académico se explica por el tipo de intervención.
+    En un estudio sobre el impacto de un programa de intervención educativa, se evaluó el rendimiento académico de los estudiantes antes y después de la intervención utilizando la prueba t para muestras relacionadas. Los resultados mostraron un valor de \( t \) significativo (\( p < 0.01 \)) y un tamaño del efecto de \( d = 0.65 \), lo que sugiere un efecto mediano. Además, para comparar el rendimiento entre tres grupos (control, intervención A e intervención B), se aplicó un ANOVA One-Way, obteniéndose un \( \eta^2 = 0.12 \) (indicando que el 12% de la varianza se explica por el tipo de intervención).
   </p>
 </section>
+
