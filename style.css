@@ -1,6 +1,8 @@
 /* -----------------------
    Variables de color
 ------------------------- */
+
+/* Modo claro por defecto */
 :root {
   --color-primario: #007acc;
   --color-primario-oscuro: #005f99;
@@ -8,6 +10,15 @@
   --color-texto: #333;
   --color-blanco: #fff;
   --fuente-base: 'Poppins', sans-serif;
+}
+
+/* Modo oscuro mediante clase */
+.modo-oscuro {
+  --color-primario: #212121;
+  --color-primario-oscuro: #000000;
+  --color-secundario: #121212;
+  --color-texto: #eee;
+  --color-blanco: #333; /* en oscuro, “blanco” puede ser un gris claro */
 }
 
 /* -----------------------
