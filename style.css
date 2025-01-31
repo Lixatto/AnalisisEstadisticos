@@ -1,237 +1,312 @@
-/* -----------------------
-   Variables de color
-------------------------- */
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Estadística 2025</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    /* -----------------------
+       MODO CLARO POR DEFECTO
+    ------------------------- */
+    :root {
+      --color-primario: #007acc;
+      --color-primario-oscuro: #005f99;
+      --color-secundario: #f4f4f4;
+      --color-texto: #333;
+      --color-blanco: #fff;
+      --fuente-base: 'Poppins', sans-serif;
+    }
 
-/* Modo claro por defecto */
-:root {
-  --color-primario: #007acc;
-  --color-primario-oscuro: #005f99;
-  --color-secundario: #f4f4f4;
-  --color-texto: #333;
-  --color-blanco: #fff;
-  --fuente-base: 'Poppins', sans-serif;
-}
+    /* -----------------------
+       MODO OSCURO (mediante clase)
+    ------------------------- */
+    .modo-oscuro {
+      --color-primario: #212121;           /* Cambiamos la “primaria” a un gris oscuro */
+      --color-primario-oscuro: #111111;    /* Aún más oscuro */
+      --color-secundario: #121212;         /* Fondo general */
+      --color-texto: #eee;                 /* Texto claro */
+      --color-blanco: #333;                /* “Blanco” es un gris */
+    }
 
-/* Modo oscuro mediante clase */
-.modo-oscuro {
-  --color-primario: #212121;
-  --color-primario-oscuro: #000000;
-  --color-secundario: #121212;
-  --color-texto: #eee;
-  --color-blanco: #333; /* en oscuro, “blanco” puede ser un gris claro */
-}
+    /* Reset básico + transiciones suaves */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
 
-/* -----------------------
-   RESET BÁSICO
-------------------------- */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-html {
-  scroll-behavior: smooth;
-}
+    body {
+      font-family: var(--fuente-base);
+      background-color: var(--color-secundario);
+      color: var(--color-texto);
+      line-height: 1.6;
+    }
 
-body {
-  font-family: var(--fuente-base);
-  background-color: var(--color-secundario);
-  color: var(--color-texto);
-  line-height: 1.6;
-}
+    /* -----------------------
+       HEADER
+    ------------------------- */
+    header {
+      background-color: var(--color-primario);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.5rem 1.5rem;
+    }
+    .logo h1 {
+      color: var(--color-blanco);
+      font-size: 1.5rem;
+    }
 
-/* -----------------------
-   ENCABEZADO (HEADER)
-------------------------- */
-header {
-  background-color: var(--color-primario);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.5rem 1.5rem;
-}
+    /* -----------------------
+       NAV
+    ------------------------- */
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
 
-.logo h1 {
-  color: var(--color-blanco);
-  font-size: 1.5rem;
-}
+    nav ul li a {
+      color: var(--color-blanco);
+      text-decoration: none;
+      padding: 0.5rem 0.75rem;
+      border-radius: 4px;
+      position: relative;
+    }
+    nav ul li a:hover {
+      background-color: var(--color-primario-oscuro);
+    }
+    /* Subrayado animado */
+    nav ul li a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background-color: var(--color-blanco);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+    nav ul li a:hover::after,
+    nav ul li a.active::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
 
-/* -----------------------
-   NAVEGACIÓN (NAV)
-------------------------- */
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-}
+    /* -----------------------
+       HERO (gradiente diagonal)
+    ------------------------- */
+    .hero {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: linear-gradient(
+        125deg,
+        var(--color-primario) 20%,
+        #ff0080 50%,
+        var(--color-primario-oscuro) 80%
+      );
+      color: var(--color-blanco);
+    }
+    .hero h2 {
+      margin-bottom: 1rem;
+      font-size: clamp(1.5rem, 5vw, 2.5rem);
+      font-weight: 600;
+    }
+    .hero p {
+      max-width: 600px;
+      margin: 0.5rem auto 2rem auto;
+      font-size: 1.1rem;
+    }
+    .btn-primario {
+      text-decoration: none;
+      background-color: var(--color-blanco);
+      color: var(--color-primario-oscuro);
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+    .btn-primario:hover {
+      background-color: var(--color-secundario);
+    }
 
-nav ul li a {
-  color: var(--color-blanco);
-  text-decoration: none;
-  padding: 0.5rem 0.75rem;
-  transition: background-color 0.3s ease;
-  border-radius: 4px;
-}
+    /* -----------------------
+       CONTENIDO
+    ------------------------- */
+    main {
+      margin: 1rem;
+    }
+    .contenido {
+      background-color: var(--color-blanco);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .contenido h2 {
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+      text-align: center;
+    }
+    .contenido p {
+      margin: 1rem 0;
+      text-align: center;
+      font-size: 1rem;
+    }
 
-nav ul li a:hover,
-nav ul li a.active {
-  background-color: var(--color-primario-oscuro);
-}
+    /* -----------------------
+       BOTÓN SECUNDARIO
+    ------------------------- */
+    .btn-secundario {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: var(--color-primario);
+      color: var(--color-blanco);
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+    .btn-secundario:hover {
+      background-color: var(--color-primario-oscuro);
+    }
 
-/* -----------------------
-   SECCIÓN HERO
-------------------------- */
-.hero {
-  text-align: center;
-  padding: 3rem 1rem;
-  background: linear-gradient(
-    135deg,
-    var(--color-primario) 40%,
-    var(--color-primario-oscuro) 100%
-  );
-  color: var(--color-blanco);
-}
+    /* -----------------------
+       CARDS
+    ------------------------- */
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+    .card {
+      background-color: var(--color-blanco);
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      max-width: 250px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+    }
+    .card h3 {
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+    }
 
-.hero h2 {
-  margin-bottom: 1rem;
-  font-size: 2rem;
-  font-weight: 600;
-}
+    /* -----------------------
+       PIE DE PÁGINA (FOOTER)
+    ------------------------- */
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      background-color: var(--color-primario);
+      color: var(--color-blanco);
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <h1>Estadística 2025</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#" class="active">Inicio</a></li>
+        <li><a href="#">Univariado</a></li>
+        <li><a href="#">Bivariado</a></li>
+        <li><a href="#">Multivariado</a></li>
+      </ul>
+    </nav>
+    <!-- Botón para alternar modo oscuro -->
+    <button id="toggleDarkMode" class="btn-primario">Modo Oscuro</button>
+  </header>
 
-.hero p {
-  max-width: 600px;
-  margin: 0.5rem auto 2rem auto;
-  font-size: 1.1rem;
-}
+  <!-- Sección Hero -->
+  <section class="hero">
+    <h2>Bienvenido a Estadística 2025</h2>
+    <p>Explora conceptos clave de estadística y psicología social con un estilo moderno y accesible.</p>
+    <a href="#" class="btn-primario">Comenzar</a>
+  </section>
 
-.btn-primario {
-  text-decoration: none;
-  background-color: var(--color-blanco);
-  color: var(--color-primario-oscuro);
-  padding: 0.75rem 1.5rem;
-  border-radius: 4px;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
-}
+  <main>
+    <section class="contenido">
+      <h2>Sección de Contenido</h2>
+      <p>Ejemplo de contenido general con fondo blanco y borde redondeado.</p>
 
-.btn-primario:hover {
-  background-color: var(--color-secundario);
-}
+      <div class="cards">
+        <div class="card">
+          <h3>Estadísticos de Centro</h3>
+          <p>Media, mediana, moda.</p>
+          <a href="#" class="btn-secundario">Ver más</a>
+        </div>
+        <div class="card">
+          <h3>Variabilidad y Forma</h3>
+          <p>Varianza, desviación, curtosis, asimetría.</p>
+          <a href="#" class="btn-secundario">Ver más</a>
+        </div>
+        <div class="card">
+          <h3>Ejemplos Prácticos</h3>
+          <p>Ejercicios y soluciones paso a paso.</p>
+          <a href="#" class="btn-secundario">Ver más</a>
+        </div>
+        <div class="card">
+          <h3>Bondad de Ajuste</h3>
+          <p>Aplicaciones del chi-cuadrado y KS.</p>
+          <a href="#" class="btn-secundario">Ver más</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-/* -----------------------
-   CONTENIDO GENERAL
-------------------------- */
-main {
-  margin: 1rem;
-}
+  <footer>
+    <p>&copy; 2025 Estadística 2025</p>
+  </footer>
 
-.contenido {
-  background-color: var(--color-blanco);
-  padding: 2rem;
-  margin-bottom: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
+  <script>
+    // Toggle Dark Mode
+    const body = document.querySelector('body');
+    const btnToggle = document.getElementById('toggleDarkMode');
 
-.contenido h2 {
-  margin-bottom: 1rem;
-  font-size: 1.8rem;
-  text-align: center;
-}
+    btnToggle.addEventListener('click', () => {
+      body.classList.toggle('modo-oscuro');
+      // Cambiamos el texto del botón y/o guardamos en localStorage
+      if (body.classList.contains('modo-oscuro')) {
+        btnToggle.textContent = 'Modo Claro';
+        localStorage.setItem('theme', 'dark');
+      } else {
+        btnToggle.textContent = 'Modo Oscuro';
+        localStorage.setItem('theme', 'light');
+      }
+    });
 
-.contenido p {
-  margin: 1rem 0;
-  text-align: center;
-  font-size: 1rem;
-}
+    // Recuerda la preferencia
+    window.addEventListener('DOMContentLoaded', () => {
+      const theme = localStorage.getItem('theme');
+      if (theme === 'dark') {
+        body.classList.add('modo-oscuro');
+        btnToggle.textContent = 'Modo Claro';
+      }
+    });
+  </script>
+</body>
+</html>
 
-/* -----------------------
-   BOTONES SECUNDARIOS
-------------------------- */
-.btn-secundario {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  background-color: var(--color-primario);
-  color: var(--color-blanco);
-  text-decoration: none;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-}
-
-.btn-secundario:hover {
-  background-color: var(--color-primario-oscuro);
-}
-
-/* -----------------------
-   CARDS
-------------------------- */
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: center;
-  margin-top: 2rem;
-}
-
-.card {
-  background-color: var(--color-blanco);
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  max-width: 250px;
-  padding: 1.5rem;
-  text-align: center;
-}
-
-.card h3 {
-  margin-bottom: 1rem;
-  font-size: 1.4rem;
-}
-
-/* -----------------------
-   DETALLES (DETAILS)
-------------------------- */
-details {
-  margin-top: 1rem;
-  background-color: var(--color-secundario);
-  padding: 1rem;
-  border-radius: 4px;
-}
-
-details summary {
-  cursor: pointer;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-/* -----------------------
-   TABLAS (OPCIONAL)
-------------------------- */
-table {
-  margin: 20px auto;
-  border-collapse: collapse;
-  width: 80%;
-}
-
-table th, table td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: center;
-}
-
-table th {
-  background-color: var(--color-primario);
-  color: var(--color-blanco);
-}
-
-/* -----------------------
-   PIE DE PÁGINA (FOOTER)
-------------------------- */
-footer {
-  text-align: center;
-  font-size: 0.9rem;
-  background-color: var(--color-primario);
-  color: var(--color-blanco);
-  padding: 1rem;
-}
