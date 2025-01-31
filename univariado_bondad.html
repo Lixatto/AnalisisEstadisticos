@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pruebas de bondad de ajuste</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <h1>Estadística 2025</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="univariado.html">Univariado</a></li>
+        <li><a href="bivariado.html">Bivariado</a></li>
+        <li><a href="multivariado.html">Multivariado</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contenido">
+      <h2>Pruebas de bondad de ajuste</h2>
+      <p>
+        Estas pruebas verifican si la distribución de la variable se ajusta a una 
+        distribución teórica específica (por ejemplo, normal, poisson, etc.).
+      </p>
+
+      <details open>
+        <summary><strong>Chi-cuadrado para una muestra</strong></summary>
+        <p>
+          Compara la frecuencia observada en cada categoría con las frecuencias 
+          esperadas según una distribución hipotética.
+        </p>
+      </details>
+
+      <details>
+        <summary><strong>Kolmogorov-Smirnov</strong></summary>
+        <p>
+          Evalúa la máxima diferencia absoluta entre la función de distribución 
+          empírica y la teórica.
+        </p>
+      </details>
+
+      <details>
+        <summary><strong>Shapiro-Wilk</strong></summary>
+        <p>
+          Muy usada para verificar la normalidad de una variable, especialmente con
+          tamaños de muestra pequeños o moderados.
+        </p>
+      </details>
+      
+      <p>
+        <em>Interpretación básica:</em> si el p-valor es menor a un nivel de 
+        significancia (por ejemplo 0.05), se rechaza la hipótesis nula de que 
+        “los datos siguen la distribución teórica”.
+      </p>
+    </section>
+
+    <section class="contenido">
+      <p>
+        <a href="univariado.html" class="btn-secundario">Volver al índice univariado</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Estadística 2025</p>
+  </footer>
+</body>
+</html>
