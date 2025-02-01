@@ -143,51 +143,90 @@ permalink: /bivariado/
       </details>
     </li>
     
-    <!-- ANOVA One-Way -->
-    <li>
-      <strong>ANOVA One-Way</strong>
-      <details>
-        <summary>Detalles</summary>
-        <p><strong>Definición teórica:</strong>  
-          El ANOVA One-Way se utiliza para comparar las medias de tres o más grupos independientes para determinar si al menos uno de ellos difiere significativamente del resto. Se basa en la partición de la variabilidad total en componentes entre grupos y dentro de los grupos.
-        </p>
-        <p><strong>Supuestos:</strong></p>
-        <ul>
-          <li>Independencia de las observaciones.</li>
-          <li>Normalidad en la distribución de la variable dependiente en cada grupo.</li>
-          <li>Homogeneidad de varianzas entre los grupos.</li>
-        </ul>
-        <p><strong>Fórmula del estadístico F:</strong></p>
-        <p>
-          $$ F = \frac{\text{MS}_{\text{between}}}{\text{MS}_{\text{within}}} $$
-        </p>
-        <p>
-          <em>Donde:</em>
-          <ul>
-            <li>\(\text{MS}_{\text{between}} = \dfrac{SS_{\text{between}}}{df_{\text{between}}}\): Media de los cuadrados entre grupos.</li>
-            <li>\(\text{MS}_{\text{within}} = \dfrac{SS_{\text{within}}}{df_{\text{within}}}\): Media de los cuadrados dentro de los grupos.</li>
-            <li>\(SS_{\text{between}}\): Suma de cuadrados entre grupos.</li>
-            <li>\(SS_{\text{within}}\): Suma de cuadrados dentro de los grupos.</li>
-            <li>\(df_{\text{between}}\) y \(df_{\text{within}}\): Grados de libertad correspondientes.</li>
-          </ul>
-        </p>
-        <p><strong>Tamaño del efecto:</strong></p>
-        <ul>
-          <li>
-            <strong>Eta cuadrado (\( \eta^2 \)):</strong> 
-            $$ \eta^2 = \frac{SS_{\text{between}}}{SS_{\text{total}}} $$
-            <br>
-            <em>Interpretación:</em> \(0.01\) (efecto pequeño), \(0.06\) (efecto mediano), \(0.14\) (efecto grande).
-          </li>
-          <li>
-            <strong>Omega cuadrado (\( \omega^2 \)):</strong> 
-            $$ \omega^2 = \frac{SS_{\text{between}} - (df_{\text{between}} \cdot MS_{\text{within}})}{SS_{\text{total}} + MS_{\text{within}}} $$
-          </li>
-        </ul>
-      </details>
-    </li>
-  </ul>
-</section>
+  <!-- ANOVA One-Way Mejorado -->
+<li>
+  <strong>ANOVA One-Way</strong>
+  <details>
+    <summary>Detalles</summary>
+    <p><strong>Definición teórica:</strong>  
+      El ANOVA One-Way es una técnica estadística utilizada para comparar las medias de tres o más grupos independientes. Su objetivo es determinar si existen diferencias significativas entre las medias, particionando la variabilidad total en componentes atribuibles a las diferencias entre grupos y a la variabilidad intra-grupal.
+    </p>
+    <p><strong>Modelo estadístico:</strong></p>
+    <p>
+      La formulación del modelo es:
+      $$ y_{ij} = \mu + \alpha_j + \varepsilon_{ij} $$
+      <br>
+      Donde:
+      <ul>
+        <li>\(y_{ij}\): Valor observado en la \(i\)-ésima observación del grupo \(j\).</li>
+        <li>\(\mu\): Media general (gran media) de todas las observaciones.</li>
+        <li>\(\alpha_j\): Efecto o desviación del grupo \(j\) respecto a la media general.</li>
+        <li>\(\varepsilon_{ij}\): Error aleatorio, que se asume independiente e idénticamente distribuido con media 0 y varianza \(\sigma^2\).</li>
+      </ul>
+    </p>
+    <p>
+      <em>Hipótesis:</em>
+      <ul>
+        <li>\(H_0: \alpha_1 = \alpha_2 = \dots = \alpha_k = 0\) (no existen diferencias entre los grupos).</li>
+        <li>\(H_a:\) Al menos uno de los \(\alpha_j\) es distinto de cero (existe al menos una diferencia significativa).</li>
+      </ul>
+    </p>
+    <p><strong>Supuestos del ANOVA One-Way:</strong></p>
+    <ul>
+      <li><strong>Independencia:</strong> Las observaciones deben ser independientes entre sí.</li>
+      <li><strong>Normalidad:</strong> La variable dependiente debe seguir una distribución normal en cada grupo. Se recomienda evaluar este supuesto mediante pruebas como Shapiro-Wilk o mediante gráficos Q-Q.</li>
+      <li><strong>Homogeneidad de varianzas:</strong> Las varianzas de la variable dependiente deben ser iguales en todos los grupos. Esto se puede verificar utilizando pruebas como Levene, Bartlett o Brown-Forsythe.</li>
+    </ul>
+    <p><strong>Contraste de supuestos y manejo de incumplimientos:</strong></p>
+    <ul>
+      <li>
+        <strong>Normalidad:</strong> Si se detectan desviaciones importantes de la normalidad, se pueden aplicar transformaciones a los datos o recurrir a métodos no paramétricos (por ejemplo, la prueba de Kruskal-Wallis).
+      </li>
+      <li>
+        <strong>Homogeneidad de varianzas:</strong> En caso de incumplimiento, se puede optar por el ANOVA de Welch o emplear métodos robustos que ajusten las diferencias en varianzas.
+      </li>
+    </ul>
+    <p><strong>Fórmula del estadístico F:</strong></p>
+    <p>
+      $$ F = \frac{\text{MS}_{\text{between}}}{\text{MS}_{\text{within}}} $$
+      <br>
+      Donde:
+      <ul>
+        <li>\(\text{MS}_{\text{between}} = \dfrac{SS_{\text{between}}}{df_{\text{between}}}\): Media de los cuadrados entre grupos, con \(df_{\text{between}} = k-1\) (siendo \(k\) el número de grupos).</li>
+        <li>\(\text{MS}_{\text{within}} = \dfrac{SS_{\text{within}}}{df_{\text{within}}}\): Media de los cuadrados dentro de los grupos, con \(df_{\text{within}} = N - k\) (donde \(N\) es el número total de observaciones).</li>
+        <li>\(SS_{\text{between}}\): Suma de cuadrados entre grupos.</li>
+        <li>\(SS_{\text{within}}\): Suma de cuadrados dentro de los grupos.</li>
+      </ul>
+    </p>
+    <p>
+      Bajo la hipótesis nula, el estadístico F se distribuye según una distribución F con \(df_{\text{between}}\) y \(df_{\text{within}}\) grados de libertad.
+    </p>
+    <p><strong>Pruebas post-hoc y contrastes planificados:</strong></p>
+    <p>
+      Si se rechaza \(H_0\), es aconsejable realizar análisis post-hoc para identificar específicamente qué grupos presentan diferencias significativas. Entre las pruebas post-hoc más utilizadas se encuentran:
+      <ul>
+        <li>Tukey HSD</li>
+        <li>Bonferroni</li>
+        <li>Scheffé</li>
+      </ul>
+      Asimismo, se pueden realizar contrastes planificados (a priori) para evaluar hipótesis específicas, siempre y cuando se establezcan antes del análisis.
+    </p>
+    <p><strong>Tamaño del efecto:</strong></p>
+    <ul>
+      <li>
+        <strong>Eta cuadrado (\( \eta^2 \)):</strong> 
+        $$ \eta^2 = \frac{SS_{\text{between}}}{SS_{\text{total}}} $$
+        <br>
+        <em>Interpretación:</em> Valores aproximados de 0.01 indican un efecto pequeño, 0.06 un efecto mediano y 0.14 un efecto grande.
+      </li>
+      <li>
+        <strong>Omega cuadrado (\( \omega^2 \)):</strong> 
+        $$ \omega^2 = \frac{SS_{\text{between}} - (df_{\text{between}} \cdot MS_{\text{within}})}{SS_{\text{total}} + MS_{\text{within}}} $$
+      </li>
+    </ul>
+  </details>
+</li>
+
 
 <!-- Sección de Técnicas de Relación -->
 <section class="contenido" id="relacion">
