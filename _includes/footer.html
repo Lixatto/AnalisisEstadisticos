@@ -1,4 +1,43 @@
 <!-- _includes/footer.html -->
 <footer>
   <p>&copy; 2025 Estadística 2025.</p>
+  <button id="backToTop" onclick="scrollToTop()">↑ Volver arriba</button>
 </footer>
+
+<style>
+  #backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    font-size: 14px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none; /* Ocultar por defecto */
+  }
+  
+  #backToTop:hover {
+    background-color: #555;
+  }
+</style>
+
+<script>
+  // Mostrar/ocultar el botón según el desplazamiento
+  window.onscroll = function() {
+    let btn = document.getElementById("backToTop");
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      btn.style.display = "block";
+    } else {
+      btn.style.display = "none";
+    }
+  };
+
+  // Función para hacer scroll hacia arriba suavemente
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+</script>
+
